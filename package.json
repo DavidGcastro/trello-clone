@@ -8,7 +8,8 @@
     "start": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "startServer": "nodemon server/index.js "
+    "startServer": "nodemon server/index.js ",
+    "seed": "node server/db/seed.js"
   },
   "author": "David Castro",
   "license": "ISC",
