@@ -3,6 +3,6 @@ import '../styles/global.scss';
 
 export default class Main extends React.Component {
   render() {
-    return <h1>David Castro</h1>;
+    return <h1>Hello World</h1>;
   }
 }

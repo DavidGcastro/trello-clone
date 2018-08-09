@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 //Map to api files
-router.use('/api', require('./api'));
+// starting from /api
+router.use('/example', require('./example'));
 
 module.exports = router;

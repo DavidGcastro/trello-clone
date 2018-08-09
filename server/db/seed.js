@@ -1,56 +1,53 @@
-// const { Student } = require('./models');
-// const { Campus } = require('./models');
+// const user = require('./models').user;
+// const tool = require('./models').tool;
 // const faker = require('faker');
-// const db = require('./index');
-// const campusName = [
-//   'Venus',
-//   'Earth',
-//   'Mars',
-//   'Saturn',
-//   'Uranus',
-//   'Pluto',
-//   'Jupiter',
-//   'Neptune',
-//   'Mercury'
-// ];
+// const db = require('./models/index').db;
 // const Promise = db.Promise; // gives us Promise.map
-
+// const typeOfTool = [
+//   'general',
+//   'carpentry',
+//   'wood work',
+//   'metal work',
+//   'farm work'
+// ];
+// function getRandomInt(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
 // async function seed() {
 //   await db.sync({ force: true });
-//   const campuses = await seedCampuses();
-//   const students = await seedStudents();
-//   console.log('Seeded', students.length, 'students.');
-//   console.log('Seeded', campuses.length, 'campuses.');
+//   const users = await seedUsers();
+//   const tools = await seedTools();
+//   console.log('Seeded', users.length, 'Users.');
+//   console.log('Seeded', tools.length, 'Tools.');
 // }
 
-// function gpa() {
-//   return Math.round(Math.random() * 4 * 100) / 100;
-// }
-// function randomCampus() {
-//   return Math.round(Math.random() * 7) + 1;
-// }
-
-// function seedStudents() {
+// function seedUsers() {
 //   return Promise.all(
-//     new Array(50).fill(1).map(() =>
-//       Student.create({
+//     new Array(20).fill(1).map(() =>
+//       user.create({
 //         firstName: faker.name.firstName(),
 //         lastName: faker.name.lastName(),
-//         email: faker.internet.email(),
-//         gpa: gpa(),
-//         campusId: randomCampus()
-//       }))
-//   );
-// }
-// function seedCampuses() {
-//   return Promise.all(
-//     campusName.map(campus => {
-//       Campus.create({
-//         name: campus,
-//         description: `This is the description for ${campus} Academy, it is located in ${campus}, Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh.`
-//       });
-//     })
+//         email: faker.internet.email()
+//       })
+//     )
 //   );
 // }
 
-// seed().then(() => process.exit());
+// function seedTools() {
+//   return Promise.all(
+//     new Array(30).fill(1).map(() =>
+//       tool.create({
+//         name: faker.commerce.productName(),
+//         description: faker.lorem.paragraph(),
+//         price: faker.commerce.price(),
+//         category: typeOfTool[getRandomInt(0, typeOfTool.length)],
+//         borrowed: faker.random.boolean(),
+//         dueDate: faker.date.future(),
+//         userId: getRandomInt(0, 20)
+//       })
+//     )
+//   );
+// }
+// seed()
+//   .then(() => process.exit())
+//   .catch(error => console.log(error));

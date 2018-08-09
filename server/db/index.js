@@ -42,8 +42,6 @@ const operatorsAliases = {
 //removes warning
 console.log(chalk.magenta('Opening database connection'));
 
-//add relations here.
-
 // create the database instance that can be used in other database files
 module.exports = new Sequelize(`postgres://localhost:5432/${pkg.name}`, {
   logging: false, // so we don't see all the SQL query made

@@ -9,7 +9,7 @@ const path = require('path');
 app.use(volleyball);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/', require('./api')); // include our routes!
+app.use('/api', require('./api')); // include our routes!
 
 app.use(express.static('./public'));
 
@@ -25,10 +25,10 @@ app.use((err, req, res, next) => {
 
 module.exports = app;
 
-db.sync() // if you update your db schemas, make sure you drop the tables first and then recreate them
+db.sync({ force: true }) // if you update your db schemas, make sure you drop the tables first and then recreate them
   .then(() => {
     console.log('db synced');
     app.listen(PORT, () =>
-      console.log(`studiously serving silly sounds on port ${PORT}`)
+      console.log(`Listening on ${PORT}`)
     );
   });
