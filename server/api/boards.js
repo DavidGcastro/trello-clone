@@ -1,8 +1,15 @@
 const router = require('express').Router();
-const Boards = require('../db/models/index').Board;
+const { Board, MainTask, SubTask } = require('../db/models/index');
 
 router.get('/', (req, res, next) => {
-  Boards.findAll()
+  Board.findAll({
+    include: [{
+      model: MainTask,
+      include: [{
+        model: SubTask,
+      }],
+    }]
+  })
     .then(boards => res.send(boards))
     .catch(next);
 });
