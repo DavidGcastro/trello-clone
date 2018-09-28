@@ -1,7 +1,8 @@
 import React from 'react';
+import Login from './Login';
 
-export default class Main extends React.Component {
-  render() {
-    return <h1>Hello World</h1>;
-  }
-}
+const Main = () => {
+  return <Login />;
+};
+
+export default Main;
