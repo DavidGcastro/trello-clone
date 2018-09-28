@@ -10,8 +10,13 @@ const Project = require('./Project');
 // Running each model (i.e. table) module (i.e. file) registers each model into our sequelize db
 // This works if we all use the same Sequelize instance (instantiated in and exported from `/db/index.js`)
 // Exporting all models from here seems like a good idea!
-User.hasMany(Project);
+
+// Project.belongsToMany(User, { through: 'UserProject' });
+// User.belongsToMany(Project, { through: 'UserProject' });
+
+User.belongsToMany(Project, { through: 'team' });
 Project.belongsToMany(User, { through: 'team' });
+
 User.hasMany(SubTask);
 
 Board.belongsTo(Project);
