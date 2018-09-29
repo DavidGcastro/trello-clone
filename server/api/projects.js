@@ -1,16 +1,11 @@
 const router = require('express').Router();
-const { Project, User, SubTask } = require('../db/models/index');
+const { Project, User, SubTask, Board } = require('../db/models/index');
 
 router.get('/', (req, res, next) => {
   Project.findAll({
     include: [
       {
-        model: User,
-        include: [
-          {
-            model: SubTask
-          }
-        ]
+        all: true
       }
     ]
   })

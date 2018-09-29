@@ -2,7 +2,7 @@
 const db = require('../index');
 // Require all the models
 const Board = require('./Board');
-const MainTask = require('./MainTask');
+const SwimLane = require('./SwimLane');
 const SubTask = require('./SubTask');
 const User = require('./User');
 const Project = require('./Project');
@@ -22,11 +22,11 @@ User.hasMany(SubTask);
 Board.belongsTo(Project);
 Project.hasMany(Board);
 
-MainTask.belongsTo(Board);
-Board.hasMany(MainTask);
+SwimLane.belongsTo(Board);
+Board.hasMany(SwimLane);
 
-SubTask.belongsTo(MainTask);
-MainTask.hasMany(SubTask);
+SubTask.belongsTo(SwimLane);
+SwimLane.hasMany(SubTask);
 
 //Pug.belongsTo(Owner)
 //Owner.hasMany(Pug)
@@ -35,4 +35,4 @@ MainTask.hasMany(SubTask);
 //of new instance methods, "getPugs", "setPugs", "createPug", "addPug", "addPugs", "removePug",
 //"removePugs", "hasPug", "hasPugs", and "countPugs"(because we defined Owner.hasMany(Pug)).
 
-module.exports = { db, Board, MainTask, SubTask, User, Project };
+module.exports = { db, Board, SwimLane, SubTask, User, Project };
