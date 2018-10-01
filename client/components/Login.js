@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Login extends Component {
   constructor() {
@@ -10,7 +11,14 @@ export default class Login extends Component {
   }
 
   handleSubmit = e => {
-    console.log(this.state);
+    axios
+      .post('/api/login', this.state)
+      .then(function(response) {
+        console.log(response.body);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
     e.preventDefault();
   };
 
