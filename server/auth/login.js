@@ -1,11 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../db/models/index');
 
-router.get('/', (req, res) => {
-  res.send('Login');
-});
 
-router.post('/', (req, res) => {
+router.get('/', (req, res) => {
   let { email, password } = req.body;
   User.findOne({ where: { email, password } }) // let's say `birthday` defaults to today
     .then(foundUser => {
