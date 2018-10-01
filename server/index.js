@@ -22,9 +22,24 @@ app.use(
     // this mandatory configuration ensures that session IDs are not predictable
     secret: 'tongiscool', // or whatever you like
     // this option is recommended and reduces session concurrency issues
-    resave: false
+    resave: false,
+
+    //Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized
+    //when it is new but not modified.Choosing false is useful for
+    // implementing login sessions, reducing server storage usage,
+    //or complying with laws that require permission before setting a cookie.
+    //Choosing false will also help with race conditions where a client makes multiple
+    //parallel requests without a session.
+    //The default value is true, but using the default has been deprecated, as the default will change in the future.
+    //Please research into this setting and choose what is appropriate to your use -case.
+    saveUninitialized: true
   })
 );
+
+app.use(function(req, res, next) {
+  console.log('session', req.session);
+  next();
+});
 
 app.use('/api', require('./api')); // include our routes!
 app.use('/auth', require('./auth'));
@@ -43,7 +58,7 @@ app.use((err, req, res, next) => {
 
 module.exports = app;
 
-db.sync({ force: true }) // if you update your db schemas, make sure you drop the tables first and then recreate them
+db.sync({ force: false }) // if you update your db schemas, make sure you drop the tables first and then recreate them
   .then(() => {
     console.log('db synced');
     app.listen(PORT, () => console.log(`Listening on ${PORT}`));

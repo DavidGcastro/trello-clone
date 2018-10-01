@@ -11,13 +11,14 @@ export default class Login extends Component {
   }
 
   handleSubmit = e => {
+    console.log(this.state);
     axios
-      .post('/api/login', this.state)
+      .post('/auth/login', this.state)
       .then(function(response) {
-        console.log(response.body);
+        console.log(response.body, 'FE');
       })
       .catch(function(error) {
-        console.log(error);
+        console.log(error, 'FE');
       });
     e.preventDefault();
   };

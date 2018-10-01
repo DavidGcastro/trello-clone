@@ -1,13 +1,24 @@
 const router = require('express').Router();
 const { User } = require('../db/models/index');
 
-
-router.get('/', (req, res) => {
+router.post('/', (req, res, next) => {
   let { email, password } = req.body;
-  User.findOne({ where: { email, password } }) // let's say `birthday` defaults to today
-    .then(foundUser => {
-      res.send(foundUser);
-    });
+  User.findOne({
+    where: {
+      email,
+      password
+    }
+  })
+    .then(function(user) {
+      if (!user) {
+        res.sendStatus(401);
+      } else {
+        req.session.userId = user.id;
+        res.sendStatus(200);
+      }
+    })
+    .then(x => res.send(x))
+    .catch(next);
 });
 
 //SETS COOKIE
