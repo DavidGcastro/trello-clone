@@ -12,6 +12,9 @@ const SubTask = db.define('subtask', {
   points: {
     type: Sequelize.INTEGER,
     defaultValue: 0
+  },
+  label: {
+    type: Sequelize.TEXT
   }
 });
 

@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   session({
     // this mandatory configuration ensures that session IDs are not predictable
-    secret: 'tongiscool', // or whatever you like
+    secret: 'threediamonddoor', // or whatever you like
     // this option is recommended and reduces session concurrency issues
     resave: false,
 
