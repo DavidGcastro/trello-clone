@@ -1,5 +1,11 @@
 const router = require('express').Router();
-const { Board, SwimLane, SubTask } = require('../db/models/index');
+const {
+  Board,
+  SwimLane,
+  SubTask,
+  Project,
+  User
+} = require('../db/models/index');
 
 router.get('/', (req, res, next) => {
   Board.findAll({
@@ -20,7 +26,19 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   let { id } = req.params;
-  Board.findAll({ where: { id } })
+  Board.findAll({
+    where: { id },
+    include: [
+      {
+        model: SwimLane,
+        include: [
+          {
+            model: SubTask
+          }
+        ]
+      }
+    ]
+  })
     .then(board => res.send(board))
     .catch(err => console.error(err));
 });

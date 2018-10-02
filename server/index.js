@@ -6,6 +6,7 @@ const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 const path = require('path');
 var session = require('express-session');
+const seed = require('./db/seed');
 
 //logging middleware
 app.use(volleyball);
@@ -59,6 +60,7 @@ app.use((err, req, res, next) => {
 module.exports = app;
 
 db.sync({ force: true }) // if you update your db schemas, make sure you drop the tables first and then recreate them
+  .then(() => seed())
   .then(() => {
     console.log('db synced');
     app.listen(PORT, () => console.log(`Listening on ${PORT}`));

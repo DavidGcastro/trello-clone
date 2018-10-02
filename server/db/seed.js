@@ -99,9 +99,11 @@ function seedSubTask() {
   );
 }
 
-seed()
-  .then(() => process.exit())
-  .catch(error => {
-    console.log(error);
-    process.exit();
-  });
+// seed()
+//   .then(() => process.exit())
+//   .catch(error => {
+//     console.log(error);
+//     process.exit();
+//   });
+
+module.exports = seed;
