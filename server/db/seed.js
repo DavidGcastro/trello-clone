@@ -13,8 +13,6 @@ const Promise = db.Promise; // gives us Promise.map
 async function seed() {
   await db.sync({ force: true });
   const team = await seedTeam();
-  //   const projects = await seedProjects();
-  //   const users = await seedUsers();
   const boards = await seedBoards();
   const swimlane = await seedSwimLane();
   const subtask = await seedSubTask();
