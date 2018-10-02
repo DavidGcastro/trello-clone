@@ -1,7 +1,7 @@
 const db = require('..');
 const Sequelize = require('sequelize');
 
-const SwimLane = db.define('maintask', {
+const SwimLane = db.define('swimlane', {
   name: {
     type: Sequelize.TEXT,
     allowNull: false

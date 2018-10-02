@@ -6,6 +6,7 @@ const SwimLane = require('./SwimLane');
 const SubTask = require('./SubTask');
 const User = require('./User');
 const Project = require('./Project');
+const Team = db.define('team');
 
 // Running each model (i.e. table) module (i.e. file) registers each model into our sequelize db
 // This works if we all use the same Sequelize instance (instantiated in and exported from `/db/index.js`)
@@ -14,8 +15,8 @@ const Project = require('./Project');
 // Project.belongsToMany(User, { through: 'UserProject' });
 // User.belongsToMany(Project, { through: 'UserProject' });
 
-User.belongsToMany(Project, { through: 'team' });
-Project.belongsToMany(User, { through: 'team' });
+User.belongsToMany(Project, { through: Team });
+Project.belongsToMany(User, { through: Team });
 
 User.hasMany(SubTask);
 
@@ -35,4 +36,4 @@ SwimLane.hasMany(SubTask);
 //of new instance methods, "getPugs", "setPugs", "createPug", "addPug", "addPugs", "removePug",
 //"removePugs", "hasPug", "hasPugs", and "countPugs"(because we defined Owner.hasMany(Pug)).
 
-module.exports = { db, Board, SwimLane, SubTask, User, Project };
+module.exports = { db, Board, SwimLane, SubTask, User, Project, Team };
