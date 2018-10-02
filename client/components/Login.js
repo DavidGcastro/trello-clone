@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 export default class Login extends Component {
   constructor() {
     super();
@@ -11,11 +10,10 @@ export default class Login extends Component {
   }
 
   handleSubmit = e => {
-    console.log(this.state);
     axios
       .post('/auth/login', this.state)
       .then(function(response) {
-        console.log(response.body, 'FE');
+        console.log(response.data);
       })
       .catch(function(error) {
         console.log(error, 'FE');
@@ -35,7 +33,7 @@ export default class Login extends Component {
           />
         </label>
         <label>
-          PassWord
+          Password
           <input
             onChange={e => this.setState({ password: e.target.value })}
             type="text"
