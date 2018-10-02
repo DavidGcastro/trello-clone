@@ -16,7 +16,7 @@ async function seed() {
   await seedBoards();
   await seedSwimLane();
   await seedSubTask();
-  console.log('Done');
+  console.log('DB Seeded!');
 }
 
 function random(max) {
