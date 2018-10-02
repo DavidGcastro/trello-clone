@@ -12,10 +12,10 @@ const Promise = db.Promise; // gives us Promise.map
 
 async function seed() {
   await db.sync({ force: true });
-  const team = await seedTeam();
-  const boards = await seedBoards();
-  const swimlane = await seedSwimLane();
-  const subtask = await seedSubTask();
+  await seedTeam();
+  await seedBoards();
+  await seedSwimLane();
+  await seedSubTask();
   console.log('Done');
 }
 
@@ -27,15 +27,13 @@ function random(max) {
 function seedTeam() {
   Promise.all([seedUsers(), seedProjects()]).then(([user, project]) =>
     Promise.all(
-      new Array(user.length).fill(1).map((x, i) =>
+      new Array(user.length).fill(1).map((current, i) =>
         Team.create({
           userId: user[i].id,
 
           projectId: project[random(15)].id
-        })
-      )
-    ).catch(err => console.log(err))
-  );
+        }))
+    ).catch(err => console.log(err)));
 }
 
 function seedProjects() {
@@ -43,8 +41,7 @@ function seedProjects() {
     new Array(30).fill(1).map(() =>
       Project.create({
         name: faker.lorem.word() + ' Project'
-      })
-    )
+      }))
   );
 }
 
@@ -56,8 +53,7 @@ function seedUsers() {
         lastName: faker.name.lastName(),
         email: faker.internet.exampleEmail(),
         password: 'password'
-      })
-    )
+      }))
   );
 }
 
@@ -68,8 +64,7 @@ function seedBoards() {
         name: faker.lorem.word() + ' Board',
         description: faker.lorem.sentence(),
         projectId: Math.floor(Math.random() * 30 + 1)
-      })
-    )
+      }))
   );
 }
 
@@ -80,8 +75,7 @@ function seedSwimLane() {
         name: faker.lorem.word() + ' Lane',
         description: faker.lorem.sentence(),
         boardId: Math.floor(Math.random() * 60 + 1)
-      })
-    )
+      }))
   );
 }
 function seedSubTask() {
@@ -94,8 +88,7 @@ function seedSubTask() {
         description: faker.lorem.sentence(),
         userId: Math.floor(Math.random() * 20 + 1),
         swimlaneId: Math.floor(Math.random() * 60 + 1)
-      })
-    )
+      }))
   );
 }
 
