@@ -8,8 +8,7 @@ const Main = () => {
   return (
     <Router>
       <div>
-        <Route path="/" component={Nav} />
-        <Route path="/" component={Home} />
+        <Login />
       </div>
     </Router>
   );
