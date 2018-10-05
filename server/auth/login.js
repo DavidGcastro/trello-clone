@@ -13,7 +13,7 @@ router.post('/', (req, res, next) => {
       if (!user) {
         res.sendStatus(401);
       } else {
-        req.session.userId = user.id;
+        req.session.userId = user.id; 
         res.status(200).send(user);
       }
     })

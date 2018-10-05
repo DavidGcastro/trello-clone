@@ -5,21 +5,29 @@ export default class Login extends Component {
     super();
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      loginMessage: '',
+      user: ''
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit = e => {
+  handleSubmit(e) {
     axios
       .post('/auth/login', this.state)
-      .then(function(response) {
-        console.log(response.data);
+      .then(response => {
+        this.setState({
+          loginMessage: 'Success',
+          user: `welcome ${response.data.firstName}`
+        });
+        console.log(response.headers, 'Front end');
       })
-      .catch(function(error) {
-        console.log(error, 'FE');
+      .catch(error => {
+        this.setState({ loginMessage: 'Failure' });
+        console.log(error);
       });
     e.preventDefault();
-  };
+  }
 
   render() {
     return (
@@ -41,6 +49,8 @@ export default class Login extends Component {
           />
         </label>
         <input type="submit" value="Submit" />
+        {this.state.loginMessage + ','}
+        {' ' + this.state.user}
       </form>
     );
   }

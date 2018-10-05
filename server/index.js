@@ -38,7 +38,13 @@ app.use(
 );
 
 app.use(function(req, res, next) {
-  console.log('session', req.session);
+  console.log('******SESSION HERE***** ', req.session);
+  if (req.session.userId) {
+    console.log('USER WAS HERE BEFORE');
+
+  } else {
+    console.log('NEW USER');
+  }
   next();
 });
 
