@@ -1,3 +1,4 @@
+@import '../mixins/responsive.scss';
 .nav {
   width: 100%;
   display: flex;
@@ -9,6 +10,7 @@
 
 .nav--logo {
   flex-direction: row;
+  padding: 10px 20px;
 }
 
 .nav--innerParent {
@@ -28,9 +30,9 @@
   color: rgb(100, 111, 121);
   transition: all ease 200ms;
 
+
   &:hover {
-   color: #24292e;
-   
+    color: #24292e;
   }
 }
 

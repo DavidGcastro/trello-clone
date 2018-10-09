@@ -1,4 +1,12 @@
 @import '../variables/screenSizes.scss';
+
+//phones
+@mixin xs {
+  @media (max-width: #{$screen-xs-min}) {
+    @content;
+  }
+}
+
 // Small devices
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
@@ -29,7 +37,7 @@
 
 // Custom devices
 @mixin rwd($screen) {
-   @media (min-width: $screen+'px') {
-       @content;
-   }
+  @media (min-width: $screen+'px') {
+    @content;
+  }
 }
