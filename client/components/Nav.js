@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
   return (
     <div className="nav">
-      <h1 className="logo">logo</h1>
-
+      <div className="nav--logo--parent">
+        <img className="nav--logo" src="./assets/images/logo.png" />
+        <h1 className="logo--name">BATON</h1>
+      </div>
       <div className="nav--innerParent">
         <Link to="/">
           <p className="nav--item">Product</p>
