@@ -8,7 +8,8 @@ const Main = () => {
   return (
     <Router>
       <div>
-        <Login />
+        <Nav />
+        <Home />
       </div>
     </Router>
   );

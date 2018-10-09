@@ -1,4 +1,9 @@
-// @import './partials/_nav';
-// * {
-//     font-family: $main-font;
-//   }
+@import './partials/_nav';
+
+li {
+    list-style: none
+}
+
+a {
+    text-decoration: none !important;
+}
