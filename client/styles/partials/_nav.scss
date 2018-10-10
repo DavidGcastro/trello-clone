@@ -1,71 +1,29 @@
 @import '../mixins/responsive.scss';
 .nav {
+  display: flex;
+  align-items: center;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.nav--logo {
-  flex-direction: row;
-  padding: 10px 20px;
-}
-
-.nav--innerParent {
-  align-items: center;
-  display: flex;
-  flex: 1;
-  flex-direction: row;
   justify-content: space-between;
-  padding: 20px 10px 20px 10px;
-}
-.nav--item {
-  flex: 1;
-  font-size: 0.875rem;
-  align-content: center;
-  align-items: center;
-  margin: 0;
-  color: rgb(100, 111, 121);
-  transition: all ease 200ms;
-
-
-  &:hover {
-    color: #24292e;
-  }
 }
 
 .logo--name {
-  flex: 1;
-  margin: 0;
-  font-size: 1.25rem;
-  letter-spacing: 2px;
+  font-size: 3vh;
 }
 .nav--logo {
-  flex-direction: row;
-  width: 40px;
-  height: 40px;
-  align-content: center;
-  padding-right: 8px;
+  width: 9vh;
+  height: auto;
+  padding-right: 10px;
 }
 
 .nav--logo--parent {
   flex: 1;
-  align-items: center;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
-.nav--item--button {
-  border: 1px solid black;
-  padding: 5px 12px;
-  border-radius: 5px;
-  align-self: center;
-  transition: all ease 200ms;
-  &:hover {
-    background: #24292e;
-    .nav--item {
-      color: white;
-    }
-  }
+
+.hamburger--parent {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
