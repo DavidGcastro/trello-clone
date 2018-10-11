@@ -1,0 +1,29 @@
+.button {
+  &--submit {
+    background: $success;
+    color: white;
+    font-weight: 400;
+    border: 0;
+    font-size: 2.5vh;
+    font-weight: 200;
+    border-radius: 4px;
+    width: 300px;
+    height: 45px;
+    @include md {
+      font-size: 1rem;
+    }
+
+    @include sm {
+      max-width: 200px;
+      flex: 1;
+    }
+  }
+
+  &--action {
+    @extend .button--submit;
+    background: $action;
+    color: black;
+    font-weight: 400;
+    
+  }
+}

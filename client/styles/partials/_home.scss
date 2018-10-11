@@ -1,10 +1,15 @@
 .home--grandparent {
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* instead of using 100% all over, use viewport units once */
+
+  & > div {
+    flex:1;
+  
+  }
 }
 .home--parent {
-  flex:1;
   @include md {
     margin: 0 auto;
   }
