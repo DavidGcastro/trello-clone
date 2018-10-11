@@ -37,8 +37,8 @@ export default class Main extends React.Component {
                 animationDuration={0.5}
               />
             </div>
-            <Menu open={this.state.open} />
           </div>
+          <Menu open={this.state.open} />
           <Home />
         </div>
       </Router>
