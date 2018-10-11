@@ -20,11 +20,10 @@ export default class Main extends React.Component {
     return (
       <Router>
         <div>
-          {/**********************************/}
           <div className="nav wrapper">
             <div className="nav--logo--parent">
               <img className="nav--logo" src="./assets/images/cogs.png" />
-              <h1 className="logo--name">NAME</h1>
+              <h1 className="logo--name" />
             </div>
             <div className="hamburger--parent">
               <HamburgerButton
@@ -34,16 +33,13 @@ export default class Main extends React.Component {
                 width="4vh"
                 height={20}
                 strokeWidth={1}
-                color={this.state.open ? 'white' : 'black'}
+                color="black"
                 animationDuration={0.5}
               />
             </div>
           </div>
           <Menu open={this.state.open} />
-          {/*******************************************/}
-          <div className={this.state.open ? 'dontMove' : ''}>
-            <Home />
-          </div>
+          <Home />
         </div>
       </Router>
     );
