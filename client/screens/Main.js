@@ -20,7 +20,7 @@ export default class Main extends React.Component {
     return (
       <Router>
         <div>
-          <div className={this.state.open ? 'hideNav' : 'nav wrapper'}>
+          <div className={this.state.open ? 'hideNav wrapper' : 'nav wrapper'}>
             <div className="nav--logo--parent">
               <img className="nav--logo" src="./assets/images/cogs.png" />
               <h1 className="logo--name">NAME</h1>
