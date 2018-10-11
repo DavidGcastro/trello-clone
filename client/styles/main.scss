@@ -1,5 +1,6 @@
 @import './partials/_nav';
 @import './partials/home';
+@import './partials//form';
 html,
 body {
   height: 100%;
@@ -29,14 +30,26 @@ a {
   color: #646f79;
   display: block;
   font-size: 2vh;
+  font-weight: 200;
   @include md {
     font-size: 2.75vh;
   }
 }
 
+.centered-image {
+  min-width: 350px;
+  width: 100%;
+  max-width: 800px;
+}
+
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
+}
+
+input {
+  -webkit-appearance: none;
+  box-shadow: none;
 }
 
 .padder {
@@ -45,11 +58,11 @@ a {
   @include md {
     padding: 40px;
   }
-    @include lg {
+  @include lg {
     padding: 60px;
   }
 
   @include xl {
-      padding: 80px;
+    padding: 80px;
   }
 }

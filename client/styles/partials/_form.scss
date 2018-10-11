@@ -1,0 +1,45 @@
+@import '../variables/colors.scss';
+
+
+.form--parent {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+
+  @include sm {
+    flex-direction: row;
+  }
+}
+
+.email-input {
+  border: 1px solid #e0e6e8;
+  color: #e0e6e8;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+
+  @include sm {
+    max-width: 400px;
+    margin-bottom: 0;
+    flex:2;
+  }
+}
+
+.button {
+  &--submit {
+    background: $success;
+    color: white;
+    font-weight: 500;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px 20px;
+    width: 100%;
+    @include sm {
+      max-width: 200px;
+      flex:1
+    }
+  }
+}

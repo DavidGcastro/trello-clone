@@ -14,7 +14,15 @@ const Header = () => {
             it, and when it’s due.
           </span>
         </div>
-        <img className="home--background" src="./assets/images/waffle.png" />
+        <img className="centered-image" src="./assets/images/waffle.png" />
+        <form className="form--parent">
+          <input
+            className="email-input"
+            type="email"
+            placeholder="name@company.com"
+          />
+          <input className="button--submit" type="submit" value="Start Free Trial" />
+        </form>
       </div>
     </div>
   );

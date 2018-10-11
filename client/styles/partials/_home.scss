@@ -1,5 +1,5 @@
 .home--parent {
-  background: #fee2d9;
+  //background: #fee2d9;
 
   @include md {
     margin: 0 auto;
@@ -9,11 +9,6 @@
 .home--textContainer {
   flex: 2;
   text-align: center;
-  max-width: 800px;
-}
-.home--background {
-  min-width: 350px;
-  width: 100%;
   max-width: 800px;
 }
 
