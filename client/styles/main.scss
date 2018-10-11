@@ -6,6 +6,10 @@
 @import './partials/_buttons';
 @import './partials/_menu';
 
+
+body{
+  overflow-x: hidden;
+}
 .wrapper {
   height: 100%;
   background: white;

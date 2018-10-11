@@ -20,6 +20,7 @@ export default class Main extends React.Component {
     return (
       <Router>
         <div>
+          {/**********************************/}
           <div className="nav wrapper">
             <div className="nav--logo--parent">
               <img className="nav--logo" src="./assets/images/cogs.png" />
@@ -38,8 +39,8 @@ export default class Main extends React.Component {
               />
             </div>
           </div>
-          {/*******************************************/}
           <Menu open={this.state.open} />
+          {/*******************************************/}
           <div className={this.state.open ? 'dontMove' : ''}>
             <Home />
           </div>

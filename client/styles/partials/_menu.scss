@@ -1,4 +1,4 @@
-.navOpen--open {
+.menu--open {
   position: fixed;
   left: 0;
   top: 0;
@@ -15,7 +15,6 @@
 
   a {
     transition: all 200ms ease;
-    z-index: 2000;
     color: white;
     font-size: 5vh;
     letter-spacing: 2px;
@@ -28,8 +27,8 @@
   }
 }
 
-.navOpen--close {
-  position: fixed;
+.menu--close {
+  position: absolute;
   left: 0;
   top: 0;
   left: 100%;
@@ -37,7 +36,7 @@
   height: 100%;
 }
 
-.navOpen--content {
+.menu--content {
   justify-content: space-between;
   display: flex;
   flex-direction: column;
