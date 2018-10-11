@@ -1,6 +1,7 @@
+@import './variables/colors.scss';
 @import './partials/_nav';
 @import './partials/home';
-@import './partials//form';
+@import './partials/form';
 @import './partials/_callout';
 @import './partials/_buttons';
 @import './partials/_menu';
@@ -9,6 +10,7 @@
   height: 100%;
   background: white;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -76,4 +78,16 @@ input {
 
 .spacer {
   padding-bottom: 20px;
+}
+
+.dontMove {
+  overflow: hidden;
+  position: fixed;
+  z-index: -10000;
+  width: 100%;
+  margin: 0 auto;
+
+  & > * {
+    flex: 1;
+  }
 }

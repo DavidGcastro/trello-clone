@@ -3,19 +3,46 @@
   left: 0;
   top: 0;
   background: black;
-  opacity: 0.6;
+  opacity: 0.9;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+
+  a {
+    transition: all 200ms ease;
+    z-index: 2000;
+    color: white;
+    font-size: 5vh;
+    letter-spacing: 2px;
+    font-weight: 300;
+
+    &:hover {
+      color: $success;
+      letter-spacing: 5px;
+    }
+  }
 }
 
 .navOpen--close {
   position: fixed;
   left: 0;
   top: 0;
-  left:100%;
- 
-  background: black;
-  opacity: 0.6;
+  left: 100%;
   width: 100%;
   height: 100%;
+}
+
+.navOpen--content {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-height: 50%;
+  width: 100%;
+  align-items: center;
 }

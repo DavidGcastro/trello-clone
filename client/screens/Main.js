@@ -33,13 +33,16 @@ export default class Main extends React.Component {
                 width="4vh"
                 height={20}
                 strokeWidth={1}
-                color="black"
+                color={this.state.open ? 'white' : 'black'}
                 animationDuration={0.5}
               />
             </div>
           </div>
+          {/*******************************************/}
           <Menu open={this.state.open} />
-          <Home />
+          <div className={this.state.open ? 'dontMove' : ''}>
+            <Home />
+          </div>
         </div>
       </Router>
     );

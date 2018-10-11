@@ -3,7 +3,7 @@
 .form--parent {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
   align-content: center;
   align-items: center;
@@ -15,10 +15,10 @@
 
 .email-input {
   border: 1px solid #e0e6e8;
-  color: #e0e6e8;
   padding: 10px;
   width: 100%;
   margin-bottom: 20px;
+  font-weight: 300;
 
   @include sm {
     max-width: 400px;
