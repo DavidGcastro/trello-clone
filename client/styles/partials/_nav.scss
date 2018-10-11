@@ -3,10 +3,13 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: inherit;
   justify-content: space-between;
   border-bottom: 2px solid $lightGrey;
-
   background: white;
   opacity: 0.9;
 
@@ -33,7 +36,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  align-items: baseline
+  align-items: baseline;
 }
 
 .hamburger--parent {
@@ -42,5 +45,4 @@
   display: flex;
   justify-content: flex-end;
   z-index: 1000;
-
 }
