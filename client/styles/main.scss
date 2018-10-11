@@ -40,9 +40,16 @@ a {
 }
 
 .padder {
-  padding: 20px;
+  padding: 30px;
 
   @include md {
     padding: 40px;
+  }
+    @include lg {
+    padding: 60px;
+  }
+
+  @include xl {
+      padding: 80px;
   }
 }

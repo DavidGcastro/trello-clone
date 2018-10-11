@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = () => {
+const Header = () => {
   return (
     <div className="home--parent">
       <div className="home--content wrapper padder">
@@ -20,4 +20,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Header;
