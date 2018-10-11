@@ -6,10 +6,8 @@
 @import './partials/_buttons';
 @import './partials/_menu';
 
-
 .wrapper {
   height: 100%;
-  background: white;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -86,4 +84,8 @@ input {
   position: fixed;
   z-index: -10000;
   width: 100%;
+}
+
+.content{
+  padding-top: 50px;
 }

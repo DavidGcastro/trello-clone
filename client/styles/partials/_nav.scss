@@ -9,7 +9,7 @@
   z-index: 1;
   height: inherit;
   justify-content: space-between;
-  border-bottom: 2px solid $lightGrey;
+  border-bottom: 3px solid $lightGrey;
   background: white;
   opacity: 0.9;
 
@@ -18,6 +18,15 @@
 
   @include md {
     padding: 20px;
+  }
+}
+.hideNav {
+  @extend .nav;
+  background: none;
+  border: none;
+  .nav--logo,
+  .logo--name {
+    visibility: hidden;
   }
 }
 
