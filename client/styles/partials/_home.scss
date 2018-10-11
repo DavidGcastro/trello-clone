@@ -1,0 +1,30 @@
+.home--parent {
+  background: #fee2d9;
+
+  @include md {
+    margin: 0 auto;
+  }
+}
+
+.home--textContainer {
+  flex: 2;
+  text-align: center;
+  max-width: 500px;
+}
+.home--background {
+  min-width: 350px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.home--content {
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home--section {
+  padding: 20px 0;
+}

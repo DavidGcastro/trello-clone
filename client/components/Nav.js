@@ -16,23 +16,23 @@ export default class Nav extends React.Component {
   }
   render() {
     return (
-      <div className="nav">
-        <div className="nav--logo--parent">
-          <img className="nav--logo" src="./assets/images/logo.png" />
-          <h1 className="logo--name">BATON</h1>
+      <div className="nav wrapper">
+          <div className="nav--logo--parent">
+            <img className="nav--logo" src="./assets/images/logo.png" />
+            <h1 className="logo--name">BATON</h1>
+          </div>
+          <div className="hamburger--parent">
+            <HamburgerButton
+              open={this.state.open}
+              onClick={this.handleClick.bind(this)}
+              width={'4vh'}
+              height={20}
+              strokeWidth={1}
+              color="black"
+              animationDuration={0.5}
+            />
+          </div>
         </div>
-        <div className="hamburger--parent">
-          <HamburgerButton
-            open={this.state.open}
-            onClick={this.handleClick.bind(this)}
-            width={'4vh'}
-            height={20}
-            strokeWidth={1}
-            color="black"
-            animationDuration={0.5}
-          />
-        </div>
-      </div>
     );
   }
 }
