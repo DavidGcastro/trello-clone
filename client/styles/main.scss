@@ -1,6 +1,7 @@
 @import './partials/_nav';
 @import './partials/home';
 @import './partials//form';
+@import './partials/_callout';
 html,
 body {
   height: 100%;
@@ -20,6 +21,11 @@ a {
   line-height: 5vh;
   display: block;
   font-weight: 300;
+
+  &--bold {
+    @extend .text--large;
+    font-weight: 500;
+  }
   @include md {
     font-size: 5.25vh;
   }
@@ -39,6 +45,7 @@ a {
 .centered-image {
   min-width: 350px;
   width: 100%;
+  height: auto;
   max-width: 800px;
 }
 

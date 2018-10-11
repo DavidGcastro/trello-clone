@@ -18,8 +18,8 @@ export default class Nav extends React.Component {
     return (
       <div className="nav wrapper">
           <div className="nav--logo--parent">
-            <img className="nav--logo" src="./assets/images/logo.png" />
-            <h1 className="logo--name">BATON</h1>
+            <img className="nav--logo" src="./assets/images/cogs.png" />
+            <h1 className="logo--name">Goodie</h1>
           </div>
           <div className="hamburger--parent">
             <HamburgerButton

@@ -1,6 +1,10 @@
+.home--grandparent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .home--parent {
-  //background: #fee2d9;
-
+  flex:1;
   @include md {
     margin: 0 auto;
   }
