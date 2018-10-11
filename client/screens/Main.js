@@ -1,18 +1,47 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Login from './Login';
 import Home from './Home';
-import Nav from './Nav';
+import Menu from './Menu';
+import { HamburgerButton } from 'react-hamburger-button';
 
-const Main = () => {
-  return (
-    <Router>
-      <div>
-        <Nav />
-        <Home />
-      </div>
-    </Router>
-  );
-};
+export default class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      open: false
+    };
+  }
 
-export default Main;
+  //why callback recommended
+  handleClick() {
+    this.setState({ open: !this.state.open });
+  }
+  render() {
+    return (
+      <Router>
+        <div>
+          <div className="nav wrapper">
+            <div className="nav--logo--parent">
+              <img className="nav--logo" src="./assets/images/cogs.png" />
+              <h1 className="logo--name">Goodie</h1>
+            </div>
+            <div className="hamburger--parent">
+              <HamburgerButton
+                className="hamburger"
+                open={this.state.open}
+                onClick={this.handleClick.bind(this)}
+                width="4vh"
+                height={20}
+                strokeWidth={1}
+                color="black"
+                animationDuration={0.5}
+              />
+            </div>
+            <Menu open={this.state.open} />
+          </div>
+          <Home />
+        </div>
+      </Router>
+    );
+  }
+}

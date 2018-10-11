@@ -3,6 +3,7 @@
 @import './partials//form';
 @import './partials/_callout';
 @import './partials/_buttons';
+@import './partials/_menu';
 html,
 body {
   height: 100%;
@@ -75,6 +76,6 @@ input {
   }
 }
 
-.spacer{
+.spacer {
   padding-bottom: 20px;
 }
