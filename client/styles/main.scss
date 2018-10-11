@@ -4,9 +4,12 @@
 @import './partials/_callout';
 @import './partials/_buttons';
 @import './partials/_menu';
-html,
-body {
+
+.wrapper {
   height: 100%;
+  background: white;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 li {
@@ -49,11 +52,6 @@ a {
   width: 100%;
   height: auto;
   max-width: 800px;
-}
-
-.wrapper {
-  margin: 0 auto;
-  max-width: 1200px;
 }
 
 input {
