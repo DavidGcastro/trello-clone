@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
   return (
     <div className="home--parent">
-      <div className="home--content wrapper padder">
+      <div className="home--content padder">
         <div className="home--textContainer">
           <span className="text--large">
             Make more time for the work that matters most
