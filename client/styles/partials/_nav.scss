@@ -6,11 +6,7 @@
   height: 100%;
   justify-content: space-between;
   border-bottom: 2px solid $lightGrey;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 0;
+
   background: white;
   opacity: 0.9;
 
@@ -24,7 +20,7 @@
 
 .logo--name {
   font-size: 3vh;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 .nav--logo {
   width: 6vh;
@@ -37,6 +33,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  align-items: baseline
 }
 
 .hamburger--parent {

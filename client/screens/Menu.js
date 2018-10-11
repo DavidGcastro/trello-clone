@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HamburgerButton } from 'react-hamburger-button';
 
 const Menu = props => {
   let { open } = props;

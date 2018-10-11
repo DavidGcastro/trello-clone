@@ -7,9 +7,6 @@
 @import './partials/_menu';
 
 
-body{
-  overflow-x: hidden;
-}
 .wrapper {
   height: 100%;
   background: white;
@@ -89,9 +86,4 @@ input {
   position: fixed;
   z-index: -10000;
   width: 100%;
-  margin: 0 auto;
-
-  & > * {
-    flex: 1;
-  }
 }
