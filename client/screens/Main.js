@@ -6,7 +6,7 @@ import Nav from './Nav';
 const Main = () => {
   return (
     <Router>
-      <div style={{ height: '100%' }}>
+      <div>
         <Nav />
         <div className="content" />
         <Home />
