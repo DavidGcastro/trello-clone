@@ -5,7 +5,7 @@ import Callout from '../components/Callout';
 
 const Home = () => {
     return (
-        <div className="home--grandparent">
+        <div>
             <Header />
             <Callout />
         </div>

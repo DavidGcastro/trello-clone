@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div className="wrapper home--parent">
+    <div className="wrapper">
       <div className="home--content padder">
         <div className="home--textContainer">
           <span className="text--large">

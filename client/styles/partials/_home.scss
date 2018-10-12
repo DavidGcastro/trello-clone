@@ -1,21 +1,9 @@
-.home--grandparent {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.home--parent {
-  @include md {
-  }
-}
-
 .home--textContainer {
-  flex: 2;
   text-align: center;
   max-width: 800px;
 }
 
 .home--content {
-  padding: 50px 0;
   display: flex;
   align-items: center;
   flex-direction: column;
