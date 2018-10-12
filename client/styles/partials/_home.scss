@@ -1,7 +1,7 @@
 .home--grandparent {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 .home--parent {
   @include md {
