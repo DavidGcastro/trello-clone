@@ -13,12 +13,7 @@
   opacity: 0.9;
   padding: 10px;
 
-
   /* center all inline content */
-
-  @include md {
-    padding: 40px;
-  }
 }
 .hideNav {
   @extend .nav;
@@ -34,7 +29,7 @@
   font-size: 20px;
   letter-spacing: 3px;
 
-  @include md{
+  @include md {
     font-size: 24px;
   }
 }
