@@ -1,15 +1,11 @@
 .home--grandparent {
-
   display: flex;
   flex-direction: column;
-
-}
-.home--parent {
-  @include md {
-  
+align-items: center;
+  & > div {
+    flex: 1;
   }
 }
-
 .home--textContainer {
   flex: 2;
   text-align: center;

@@ -6,6 +6,12 @@
 @import './partials/_buttons';
 @import './partials/_menu';
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 .wrapper {
   height: 100%;
   max-width: 1200px;
@@ -22,9 +28,9 @@ a {
 }
 
 .text--large {
-  font-size: 4vh;
+  font-size: 6vw;
   font-weight: 300;
-  line-height: 5vh;
+  line-height: 4vh;
   display: block;
   font-weight: 300;
 
@@ -32,8 +38,16 @@ a {
     @extend .text--large;
     font-weight: 500;
   }
+
+  @include sm {
+    font-size: 24px;
+  }
+
   @include md {
-    font-size: 5.25vh;
+    font-size: 30px;
+  }
+  @include lg {
+    font-size: 40px;
   }
 }
 
@@ -41,10 +55,14 @@ a {
   font-size: 200;
   color: #646f79;
   display: block;
-  font-size: 2vh;
+  font-size: 4vw;
   font-weight: 200;
+
+  @include sm {
+    font-size: 16px;
+  }
   @include md {
-    font-size: 2.75vh;
+    font-size: 24px;
   }
 }
 
@@ -86,6 +104,6 @@ input {
   width: 100%;
 }
 
-.content{
-  padding-top: 50px;
+.content {
+  height: 60px;
 }
