@@ -2,23 +2,18 @@
 .nav {
   display: flex;
   align-items: center;
-  padding: 10px;
   position: fixed;
   left: 0;
   right: 0;
   z-index: 1;
-  height: inherit;
+  height: inherit !important;
   justify-content: space-between;
   border-bottom: 3px solid $lightGrey;
   background: white;
   opacity: 0.9;
+  padding: 10px;
 
   /* center all inline content */
-  height: inherit !important;
-
-  @include md {
-    padding: 20px;
-  }
 }
 .hideNav {
   @extend .nav;
@@ -31,11 +26,15 @@
 }
 
 .logo--name {
-  font-size: 3vh;
+  font-size: 20px;
   letter-spacing: 3px;
+
+  @include md {
+    font-size: 24px;
+  }
 }
 .nav--logo {
-  width: 6vh;
+  width: 50px;
   height: auto;
   padding-right: 10px;
 }
@@ -51,6 +50,5 @@
 .hamburger--parent {
   flex: 1;
   display: flex;
-
   justify-content: flex-end;
 }

@@ -1,12 +1,10 @@
 .home--grandparent {
-
   display: flex;
   flex-direction: column;
-
+  height: 100vh;
 }
 .home--parent {
   @include md {
-  
   }
 }
 
