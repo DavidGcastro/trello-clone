@@ -3,11 +3,16 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Footer from './Footer'
 
-const Main = () => {
+class Main = () => {
   return (
     <Router>
-      <div className='content'>
+      <div>
         <Nav />
+         
+
+
+
+
         <Footer />
       </div>
     </Router>
