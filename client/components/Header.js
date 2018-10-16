@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <div className="header wrapper">
@@ -9,11 +9,25 @@ const Header = () => {
       />
       <div className="header--text">
         <span className="header--title">The Behavioural design agency</span>
-        <span className="header--description" style={{ fontWeight: 100 }}>
-          Spring is a digital studio based in Paris with an itch for behavioural
-          science, busy designing and building meaningful digital products and
-          services for clients worldwide.
-        </span>
+        <div className="header--descriptionParent">
+          <span className="header--description" style={{ fontWeight: 100 }}>
+            Spring is a digital studio based in Paris with an itch for
+            behavioural science, busy designing and building meaningful digital
+            products and services for clients worldwide.
+          </span>
+          <Link
+            to="/contact"
+            style={{
+              letterSpacing: 2,
+              paddingTop: 20,
+              fontSize: 16,
+              color: '#01010f',
+              borderBottom: '1px solid #D8D9DA',
+              display: 'inline-block'
+            }}>
+            Contact Us
+          </Link>
+        </div>
       </div>
     </div>
   );

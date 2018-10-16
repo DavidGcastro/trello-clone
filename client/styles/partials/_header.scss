@@ -8,11 +8,11 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
 
-    & span {
+    span,
+    div {
       @include md {
-        margin: 20px;
         flex: 1;
         max-width: 325px;
       }
@@ -27,6 +27,20 @@
   }
 }
 
+.header--descriptionParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include md {
+    align-items: flex-end;
+  }
+
+  & a {
+    max-width: 120px;
+    font-weight: 500;
+  }
+}
+
 .header--image {
   width: 100%;
   max-height: 1000px;
@@ -34,22 +48,23 @@
 
 .header--title {
   @extend .text--large;
-
   font-weight: 500;
   letter-spacing: 2px;
   padding-bottom: 5px;
-  line-height: 2.15rem;
 
   @include md {
+    line-height: 45px;
+
     padding-bottom: 0px;
     text-align: left;
   }
 }
+
 .header--description {
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   font-weight: 100;
-  color: rgb(136, 137, 138);
-  letter-spacing: 2px;
+  color: #424242;
+  letter-spacing: 1.5px;
 
   @include md {
     text-align: right;
