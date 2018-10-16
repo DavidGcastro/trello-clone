@@ -18,7 +18,8 @@ export default class Nav extends React.Component {
     return (
       <div>
         <div className={this.state.open ? 'hideNav wrapper' : 'nav wrapper'}>
-          <div className="nav--logo--parent">
+          <div className="nav--logo--parent wrapper">
+            <img className="nav--logo" src="./assets/images/cogs.png" />
             <h1 className="logo--name">NAME</h1>
           </div>
           <div className="hamburger--parent">
