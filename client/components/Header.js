@@ -10,8 +10,9 @@ const Header = () => {
       <div className="header--text">
         <span className="header--title">The Behavioural design agency</span>
         <span className="header--description" style={{ fontWeight: 100 }}>
-          We collaborate with ambitious brands and people – let's build
-          something great together.
+          Spring is a digital studio based in Paris with an itch for behavioural
+          science, busy designing and building meaningful digital products and
+          services for clients worldwide.
         </span>
       </div>
     </div>

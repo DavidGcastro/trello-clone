@@ -8,7 +8,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding-top: 20px;
+    padding: 10px;
+
     & span {
       @include md {
         margin: 20px;
@@ -18,6 +19,8 @@
     }
 
     @include md {
+      align-items: flex-start;
+
       flex-direction: row;
       justify-content: space-between;
     }
@@ -31,7 +34,7 @@
 
 .header--title {
   @extend .text--large;
-  text-align: left;
+
   font-weight: 500;
   letter-spacing: 2px;
   padding-bottom: 5px;
@@ -39,6 +42,7 @@
 
   @include md {
     padding-bottom: 0px;
+    text-align: left;
   }
 }
 .header--description {
@@ -49,5 +53,9 @@
 
   @include md {
     text-align: right;
+  }
+
+  @include lg {
+    font-size: 1rem;
   }
 }

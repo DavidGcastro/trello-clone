@@ -4,19 +4,18 @@
   bottom: 0px;
   left: 0;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   background: #f4f5f7;
   padding: 10px;
-  max-height: 250px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   clear: both;
-  
 
   @include md {
     flex-direction: row;
-    max-height: 200px;
+    height: 200px;
   }
   h4 {
     letter-spacing: 2px;
