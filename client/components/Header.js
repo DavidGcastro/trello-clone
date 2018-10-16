@@ -7,7 +7,7 @@ const Header = () => {
         className="header--image"
         src="./assets/images/spring_dribbble_2shot_3.png"
       />
-      <div className="header--text">
+      <div className="header--text innerPadding" style={{paddingTop:30}}>
         <span className="header--title">The Behavioural design agency</span>
         <div className="header--descriptionParent">
           <span className="header--description" style={{ fontWeight: 100 }}>

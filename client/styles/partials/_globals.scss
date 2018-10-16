@@ -39,7 +39,7 @@ a:hover {
   flex: 1 0 auto;
 }
 .wrapper {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -79,7 +79,7 @@ a {
   color: #646f79;
   display: block;
   font-size: 4vw;
-  font-weight: 200;
+  font-weight: 100;
 
   @include sm {
     font-size: 16px;
@@ -120,6 +120,17 @@ input {
   height: 60px;
 }
 
+.divider {
+  padding-top: 60px;
+}
+
+.innerPadding {
+  padding: 0 10px;
+
+  @include md {
+    padding: 0 20px;
+  }
+}
 .dontMove {
   overflow: hidden;
   position: fixed;

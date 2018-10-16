@@ -1,0 +1,47 @@
+.callout {
+  text-align: left;
+  height: 100%;
+
+  span {
+    padding: 20px 0;
+  }
+
+  img {
+    flex: 1;
+    max-width: 400px;
+    max-height: 400px;
+    height: 100%;
+  }
+
+  &--textParent {
+    flex: 1;
+
+    @include md {
+      text-align: right;
+    }
+  }
+
+  &--content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    div {
+      @include md {
+        max-width: 500px;
+      }
+
+      span:first-child {
+        @include md {
+          line-height: 35px;
+        }
+      }
+    }
+
+    @include md {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+}
