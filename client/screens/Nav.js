@@ -19,7 +19,14 @@ export default class Nav extends React.Component {
       <div>
         <div className={this.state.open ? 'hideNav wrapper' : 'nav wrapper'}>
           <div className="nav--logo--parent wrapper">
-            <img className="nav--logo" src="./assets/images/cogs.png" />
+            <span
+              className="logo--name"
+              style={{
+                color: '#2E4F4C',
+                fontWeight: 'bold'
+              }}>
+              SPRING
+            </span>
           </div>
           <div className="hamburger--parent">
             <HamburgerButton

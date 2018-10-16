@@ -3,9 +3,9 @@ body {
   height: 100%;
   width: 100%;
   max-height: 2000px;
-  font-family: Rubik;
 }
-
+.main--content {
+}
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -44,7 +44,6 @@ a {
 }
 
 .text--reg {
-  font-size: 200;
   color: #646f79;
   display: block;
   font-size: 4vw;
@@ -86,7 +85,7 @@ input {
 }
 
 .spacer {
-  padding-bottom: 20px;
+  height: 60px;
 }
 
 .dontMove {

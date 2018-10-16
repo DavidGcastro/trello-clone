@@ -7,8 +7,9 @@ import Home from './Home';
 const Main = () => {
   return (
     <Router>
-      <div>
+      <div className="main--content">
         <Nav />
+        <div className="spacer" />
         <Home />
         <Footer />
       </div>
