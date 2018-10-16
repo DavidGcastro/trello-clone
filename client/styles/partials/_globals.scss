@@ -3,14 +3,17 @@
   padding: 0;
 }
 
+a:hover {
+  color: rgb(46, 79, 76) !important;
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
-
 }
 
-#container{
+#container {
   min-height: 100%;
 }
 
@@ -18,10 +21,9 @@ body {
   overflow: auto;
   padding-bottom: 240px;
 
-  @include md{
+  @include md {
     padding-bottom: 150px;
   }
-
 }
 .wrapper {
   max-width: 1200px;
