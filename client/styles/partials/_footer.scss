@@ -6,15 +6,14 @@
   height: 100%;
   background: #f4f5f7;
   padding: 10px;
-  max-height:250px;
+  max-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 
   @include md {
     flex-direction: row;
-      max-height:200px;
-
+    max-height: 200px;
   }
   h4 {
     letter-spacing: 2px;
@@ -24,6 +23,7 @@
   }
 
   &--content {
+    width: 100%;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -31,6 +31,7 @@
     height: 100%;
 
     @include md {
+      padding: 0;
       align-items: center;
       flex-direction: row;
       width: 100%;
@@ -46,10 +47,10 @@
 }
 .footer--title {
   color: black;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 400;
   @include md {
-    font-size: .875rem;
+    font-size: 0.875rem;
     align-self: flex-start;
   }
 }
@@ -60,7 +61,7 @@
   display: block;
   color: gray;
   @include md {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -77,6 +78,7 @@
 
     @include md {
       flex: 2;
+      margin-top: 15px;
     }
   }
 }

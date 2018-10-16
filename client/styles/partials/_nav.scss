@@ -8,16 +8,13 @@
   justify-content: space-between;
   border-bottom: 3px solid $lightGrey;
   background: white;
-  opacity: 0.9;
   padding: 10px;
-   z-index: 2
-
+  z-index: 2;
 }
 .hideNav {
   @extend .nav;
   background: none;
   border: none;
-
 
   .nav--logo,
   .logo--name {
