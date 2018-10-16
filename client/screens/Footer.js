@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 let data = [
   {
-    title: 'Using NAME',
+    title: 'Using SPRING',
     links: ['Features', 'Enterprise', 'Pricing', 'Support', 'Status']
   },
   { title: 'Legal', links: ['Privacy', 'Terms Of Service'] },
@@ -16,11 +16,11 @@ const Footer = () => {
         <div className="links">
           {data.map((x, y) => {
             return (
-              <div className="fiiter--inner">
+              <div key={x} className="fiiter--inner">
                 <span className="footer--title">{x.title}</span>
                 <div>
                   {x.links.map(x => (
-                    <Link to={`/info/${x}`} className="footer--link">
+                    <Link key={x} to={`/info/${x}`} className="footer--link">
                       {x}
                     </Link>
                   ))}

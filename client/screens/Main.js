@@ -7,10 +7,12 @@ import Home from './Home';
 const Main = () => {
   return (
     <Router>
-      <div className="main--content">
+      <div id="container">
         <Nav />
-        <div className="spacer" />
-        <Home />
+        <div className="main--content">
+          <div className="spacer" />
+          <Home />
+        </div>
         <Footer />
       </div>
     </Router>
