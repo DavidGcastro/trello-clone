@@ -4,12 +4,6 @@ body {
   width: 100%;
 }
 
-body {
-  height: 100vh;
-  // display: flex;
-  // flex-direction: column;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -38,13 +32,6 @@ a:hover {
 
 .main--content {
   flex: 1 0 auto;
-
-  // overflow: auto;
-  // // padding-bottom: 250px;
-
-  // @include md {
-  //   // padding-bottom: 200px;
-  // }
 }
 .wrapper {
   max-width: 1200px;
