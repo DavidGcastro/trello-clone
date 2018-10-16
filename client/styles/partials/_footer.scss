@@ -9,9 +9,9 @@
   padding: 10px;
   height: 250px;
   // display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  clear: both;
+  // flex-direction: column;
+  // justify-content: space-evenly;
+  // clear: both;
 
   @include md {
     flex-direction: row;
@@ -27,21 +27,20 @@
   &--content {
     width: 100%;
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    // display: flex;
+    // flex-wrap: wrap;
+    // flex-direction: column;
     height: 100%;
 
     @include md {
       padding: 0;
-      align-items: center;
-      flex-direction: row;
+      // align-items: center;
+      // flex-direction: row;
       width: 100%;
     }
   }
 }
 .footer--inner {
-  background: red;
   display: flex;
   justify-content: space-between;
   flex: 1;
