@@ -1,1 +1,1 @@
-![Landing Page](/images/logo.png)
+(/images/LandingPage.png)
