@@ -7,19 +7,18 @@ const Callout = () => {
         <div className="callout--textParent">
           <div>
             <span className="text--large--bold">
-              We create long-lasting, positive growth for your business.
+              Donec rutrum congue leo eget malesuada. Donec rutrum congue leo
+              eget.
             </span>
             <span className="header--description">
-              Spring is a digital studio based in Paris with an itch for
-              behavioural science, busy designing and building meaningful
-              digital products and services for clients worldwide.
+              Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit,
+              eget tincidunt nibh pulvinar a. Nulla porttitor accumsan
+              tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh
+              pulvinar a.
             </span>
           </div>
           <input
-            style={{
-              marginTop: 20,
-              marginBottom: 20,
-            }}
+            style={{ marginTop: 20, marginBottom: 20 }}
             value="Try For Free"
             className="button--action"
             type="button"

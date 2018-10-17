@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 let data = [
   {
-    title: 'Using SPRING',
+    title: 'Using NAME',
     links: ['Features', 'Enterprise', 'Pricing', 'Support', 'Status']
   },
   { title: 'Legal', links: ['Privacy', 'Terms Of Service'] },

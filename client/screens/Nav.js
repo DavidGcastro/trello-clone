@@ -25,7 +25,7 @@ export default class Nav extends React.Component {
                 color: '#2E4F4C',
                 fontWeight: 'bold'
               }}>
-              SPRING
+              NAME
             </span>
           </div>
           <div className="hamburger--parent">
