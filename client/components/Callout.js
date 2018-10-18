@@ -27,7 +27,6 @@ const Callout = () => {
           />
         </div>
         <img
-        resizeMode='contain'
           className="callout-image"
           src="./assets/images/time.png"
         />
