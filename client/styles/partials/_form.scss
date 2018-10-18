@@ -5,9 +5,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
 }
 
 .form--inner {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

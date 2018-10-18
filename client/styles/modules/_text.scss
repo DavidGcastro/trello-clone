@@ -6,6 +6,7 @@
 
   &--bold {
     @extend .text--large;
+    letter-spacing: 2px;
     font-weight: 500;
   }
 
@@ -32,5 +33,25 @@
   }
   @include md {
     font-size: 24px;
+  }
+}
+
+.title--large--light {
+  @extend .text--large;
+  font-weight: 300;
+  letter-spacing: 2px;
+  padding-bottom: 5px;
+
+  @include md {
+    line-height: 35px;
+
+    padding-bottom: 0px;
+    text-align: left;
+  }
+}
+
+.right-align {
+  @include md {
+    text-align: right;
   }
 }

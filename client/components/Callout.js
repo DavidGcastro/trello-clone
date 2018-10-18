@@ -9,7 +9,7 @@ const Callout = () => {
         style={{ paddingBottom: 0 }}>
         <div className="callout--textParent">
           <div>
-            <span className="text--large--bold">
+            <span className="title--large--light right-align">
               Donec rutrum congue leo eget malesuada. Donec rutrum congue leo
               eget.
             </span>

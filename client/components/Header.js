@@ -8,11 +8,13 @@ const Header = () => {
         src="/assets/images/conference_table.png"
       />
       <div className="header--text innerPadding" style={{ paddingTop: 30 }}>
-        <span className="header--title">
+        <span className="title--large--light">
           Donec rutrum congue leo eget malesuada.
         </span>
         <div className="header--descriptionParent">
-          <span className="header--description" style={{ fontWeight: 100 }}>
+          <span
+            className="header--description"
+            style={{ fontWeight: 100 }}>
             Vivamus magna justo, lacinia eget consectetur sed, convallis at
             tellus. Cras ultricies ligula sed magna dictum porta.
           </span>
