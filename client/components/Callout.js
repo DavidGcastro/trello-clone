@@ -3,7 +3,9 @@ import React from 'react';
 const Callout = () => {
   return (
     <div className="callout wrapper divider">
-      <div className="callout--content innerPadding" style={{paddingBottom: 0}}>
+      <div
+        className="callout--content innerPadding"
+        style={{ paddingBottom: 0 }}>
         <div className="callout--textParent">
           <div>
             <span className="text--large--bold">
@@ -25,8 +27,9 @@ const Callout = () => {
           />
         </div>
         <img
+        resizeMode='contain'
           className="callout-image"
-          src="./assets/images/spring-illu-home-contact.png"
+          src="./assets/images/time.png"
         />
       </div>
     </div>
