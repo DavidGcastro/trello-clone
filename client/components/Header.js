@@ -6,7 +6,7 @@ const Header = () => {
     <div className="header wrapper">
       <img
         className="header--image"
-        src="/assets/images/spring_dribbble_2shot_3.png"
+        src="/assets/images/conference_table.png"
       />
       <div className="header--text innerPadding" style={{ paddingTop: 30 }}>
         <span className="header--title">
