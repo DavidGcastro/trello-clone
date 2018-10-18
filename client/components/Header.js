@@ -19,7 +19,7 @@ const Header = () => {
           <a
             href="mailto:davidgcastro93@gmail.com"
             target="_self"
-            className="underlinedLink">
+            className="underlinedLink divider">
             Contact Us
           </a>
         </div>

@@ -22,7 +22,6 @@ body {
 
 #container {
   height: 100%;
-  // height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -45,8 +44,9 @@ li {
   list-style: none;
 }
 
-a {
-  text-decoration: none !important;
+input {
+  -webkit-appearance: none;
+  box-shadow: none;
 }
 
 
@@ -57,10 +57,6 @@ a {
   max-width: 600px;
 }
 
-input {
-  -webkit-appearance: none;
-  box-shadow: none;
-}
 
 .padder {
   padding: 30px;
@@ -76,15 +72,17 @@ input {
     padding: 80px;
   }
 }
-
+//For footer
 .spacer {
   height: 60px;
 }
 
+//spacing elements within div
 .divider {
   margin-top: 60px;
 }
 
+//padding insider divs
 .innerPadding {
   padding: 0 20px;
 
@@ -92,6 +90,7 @@ input {
     padding: 50px 20px;
   }
 }
+
 .dontMove {
   overflow: hidden;
   position: fixed;
@@ -99,10 +98,4 @@ input {
   width: 100%;
 }
 
-.stickToBottom {
-  position: absolute;
-  bottom: 250px;
-  @include md {
-    bottom: 200px;
-  }
-}
+

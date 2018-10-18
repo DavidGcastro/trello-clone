@@ -3,6 +3,10 @@ a:hover {
 
   @extend .link:hover;
 }
+a {
+  text-decoration: none !important;
+}
+
 
 .link {
   transition: all 300ms ease;
