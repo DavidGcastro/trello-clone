@@ -1,0 +1,12 @@
+.notFound {
+  flex: 1;
+  display: 'flex';
+  justify-content: 'center';
+
+  div {
+    flex: 1;
+    justify-content: 'center';
+    display: 'flex';
+    align-items: 'center';
+  }
+}

@@ -7,6 +7,10 @@ export default class Login extends Component {
   }
 
   render() {
-    return <h1>lol</h1>;
+    return (
+      <div className="form--parent">
+        <span />
+      </div>
+    );
   }
 }
