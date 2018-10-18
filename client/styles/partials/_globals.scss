@@ -49,43 +49,6 @@ a {
   text-decoration: none !important;
 }
 
-.text--large {
-  font-size: 6vw;
-  font-weight: 300;
-  // line-height: 4vh;
-  display: block;
-  font-weight: 300;
-
-  &--bold {
-    @extend .text--large;
-    font-weight: 500;
-  }
-
-  @include sm {
-    font-size: 24px;
-  }
-
-  @include md {
-    font-size: 30px;
-  }
-  @include lg {
-    font-size: 40px;
-  }
-}
-
-.text--reg {
-  color: #646f79;
-  display: block;
-  font-size: 4vw;
-  font-weight: 100;
-
-  @include sm {
-    font-size: 16px;
-  }
-  @include md {
-    font-size: 24px;
-  }
-}
 
 .centered-image {
   min-width: 350px;

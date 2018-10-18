@@ -1,16 +1,28 @@
+a:hover {
+  transition: all 300ms ease;
+
+  @extend .link:hover;
+}
+
 .link {
   transition: all 300ms ease;
   color: black;
   letter-spacing: 2px;
   &:hover {
     color: $darkGreen !important;
-   
+    letter-spacing: 3px;
   }
 }
 
 .underlinedLink {
-  @extend .link;
-  font-size: 16px;
+  @extend .link, .text--reg;
+  display: inline !important;
+  font-size: 16px !important;
+  letter-spacing: 2px;
   border-bottom: 1px solid #d8d9da;
   display: inline-block;
+
+  &:hover {
+    @extend .link:hover;
+  }
 }

@@ -1,7 +1,5 @@
 @import './variables/colors.scss';
 @import './mixins/responsive.scss';
-@import './modules/links.scss';
-@import './modules//buttons';
 @import './partials/globals';
 @import './partials/_nav';
 @import './partials/home';
@@ -11,3 +9,6 @@
 @import './partials/404';
 @import './partials//header';
 @import './partials//footer';
+@import './modules/links.scss';
+@import './modules//buttons';
+@import './modules/text';
