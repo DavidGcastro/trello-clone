@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 const Header = () => {
   return (
     <div className="header wrapper">
       <img
         className="header--image"
-        src="./assets/images/spring_dribbble_2shot_3.png"
+        src="/assets/images/spring_dribbble_2shot_3.png"
       />
       <div className="header--text innerPadding" style={{ paddingTop: 30 }}>
         <span className="header--title">

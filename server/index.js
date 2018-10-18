@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 var session = require('express-session');
 const seed = require('./db/seed');
-
 //logging middleware
 app.use(volleyball);
 app.use(bodyParser.json());

@@ -37,7 +37,14 @@ a:hover {
 
 .main--content {
   flex: 1 0 auto;
- 
+  display: flex;
+  flex-direction: column;
+
+  div {
+    width:100%;
+    
+    
+  }
 }
 .wrapper {
   max-width: 1400px;
