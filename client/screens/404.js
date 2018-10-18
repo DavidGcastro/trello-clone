@@ -22,7 +22,7 @@ const PageNotFound = () => {
       <img
         className="stickToBottom"
         style={{ maxWidth: 300 }}
-        src="./assets/images/spring-illu-home-contact.png"
+        src="/assets/images/spring-illu-home-contact.png"
       />
     </div>
   );
