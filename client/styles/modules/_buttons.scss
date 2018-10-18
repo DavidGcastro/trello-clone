@@ -26,13 +26,9 @@
   &--action {
     @extend .button--submit;
     background: $darkGreen;
-    // background: $action;
-    // color: black;
     color: white;
-
     font-weight: 300;
     letter-spacing: 2px;
-
     &:hover {
       background: white;
       border: 1px solid #444;

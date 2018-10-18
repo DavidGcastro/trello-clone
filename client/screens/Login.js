@@ -8,8 +8,10 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="form--parent">
-        <span />
+      <div className="form--parent innerPadding">
+        <div className="form--inner">
+          <span>lol</span>
+        </div>
       </div>
     );
   }

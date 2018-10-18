@@ -8,10 +8,18 @@ const Menu = props => {
       <div
         onClick={e => (e.target.text ? handleClick() : '')}
         className="menu--content">
-        <Link to="/about">About Us</Link>
-        <Link to="/">FAQ</Link>
-        <Link to="/login">Log In</Link>
-        <Link to="/signup">Sign Up</Link>
+        <Link className="link" to="/about">
+          About Us
+        </Link>
+        <Link className="link" to="/">
+          FAQ
+        </Link>
+        <Link className="link" to="/login">
+          Log In
+        </Link>
+        <Link className="link" to="/signup">
+          Sign Up
+        </Link>
       </div>
     </div>
   );

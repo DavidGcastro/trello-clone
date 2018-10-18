@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -20,14 +19,7 @@ const Header = () => {
           <a
             href="mailto:davidgcastro93@gmail.com"
             target="_self"
-            style={{
-              letterSpacing: 2,
-              paddingTop: 20,
-              fontSize: 16,
-              color: '#01010f',
-              borderBottom: '1px solid #D8D9DA',
-              display: 'inline-block'
-            }}>
+            className="underlinedLink">
             Contact Us
           </a>
         </div>

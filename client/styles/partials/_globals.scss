@@ -10,7 +10,6 @@ body {
 }
 #root {
   height: 100%;
-
   &.div {
     height: 100%;
   }
@@ -21,16 +20,9 @@ body {
   min-height: 100%;
 }
 
-a {
-  transition: all 300ms ease;
-}
-a:hover {
-  color: $darkGreen !important;
-  letter-spacing: 2px !important;
-}
-
 #container {
-  height: 100vh;
+  height: 100%;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -41,9 +33,7 @@ a:hover {
   flex-direction: column;
 
   div {
-    width:100%;
-    
-    
+    width: 100%;
   }
 }
 .wrapper {
@@ -146,11 +136,10 @@ input {
   width: 100%;
 }
 
-.stickToBottom{
+.stickToBottom {
   position: absolute;
-  bottom:250px;
+  bottom: 250px;
   @include md {
     bottom: 200px;
   }
-
 }

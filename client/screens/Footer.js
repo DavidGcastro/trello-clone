@@ -20,7 +20,10 @@ const Footer = () => {
                 <span className="footer--title">{x.title}</span>
                 <div>
                   {x.links.map(x => (
-                    <Link key={x + 'Link'} to={`/info/${x}`} className="footer--link">
+                    <Link
+                      key={x + 'Link'}
+                      to={`/info/${x}`}
+                      className="footer--link">
                       {x}
                     </Link>
                   ))}

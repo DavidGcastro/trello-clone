@@ -1,28 +1,13 @@
-@import '../variables/colors.scss';
-
 .form--parent {
+  flex: 1;
+  background: $earth;
   display: flex;
-  width: 100%;
-  justify-content: space-around;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
   align-items: center;
-
-  @include sm {
-    flex-direction: row;
-  }
+ 
 }
 
-.email-input {
-  border: 1px solid #e0e6e8;
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 20px;
-  font-weight: 300;
+.form--inner {
 
-  @include sm {
-    max-width: 400px;
-    margin-bottom: 0;
-    flex: 2;
-  }
 }
