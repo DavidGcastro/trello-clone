@@ -11,7 +11,7 @@ const Main = () => {
         <Nav />
         <div className="main--content">
           <div className="spacer" />
-          <Home />
+          <Route path="/" component={Home} />
         </div>
         <Footer />
       </div>
