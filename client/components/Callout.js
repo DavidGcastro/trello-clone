@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Callout = () => {
   return (
@@ -19,17 +20,17 @@ const Callout = () => {
               pulvinar a.
             </span>
           </div>
-          <input
-            style={{ marginTop: 20, marginBottom: 20 }}
-            value="Try For Free"
-            className="button--action"
-            type="button"
-          />
+          <Link to="/signup">
+            <input
+              style={{ marginTop: 20, marginBottom: 20 }}
+              value="Try For Free"
+              className="button--action"
+              type="button"
+            />
+          </Link>
         </div>
-        <img
-          className="callout-image"
-          src="./assets/images/time.png"
-        />
+
+        <img className="callout-image" src="./assets/images/time.png" />
       </div>
     </div>
   );
