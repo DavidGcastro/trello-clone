@@ -16,8 +16,9 @@ const Header = () => {
             Vivamus magna justo, lacinia eget consectetur sed, convallis at
             tellus. Cras ultricies ligula sed magna dictum porta.
           </span>
-          <Link
-            to="/contact"
+          <a
+            href="mailto:davidgcastro93@gmail.com"
+            target="_self"
             style={{
               letterSpacing: 2,
               paddingTop: 20,
@@ -27,7 +28,7 @@ const Header = () => {
               display: 'inline-block'
             }}>
             Contact Us
-          </Link>
+          </a>
         </div>
       </div>
     </div>

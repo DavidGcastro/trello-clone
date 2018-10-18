@@ -54,7 +54,7 @@ a {
 .text--large {
   font-size: 6vw;
   font-weight: 300;
-  line-height: 4vh;
+  // line-height: 4vh;
   display: block;
   font-weight: 300;
 
@@ -121,14 +121,14 @@ input {
 }
 
 .divider {
-  padding-top: 60px;
+  margin-top: 60px;
 }
 
 .innerPadding {
   padding: 0 20px;
 
   @include md {
-    padding: 0 20px;
+    padding: 50px 20px;
   }
 }
 .dontMove {
