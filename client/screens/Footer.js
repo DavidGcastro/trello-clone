@@ -16,11 +16,11 @@ const Footer = () => {
         <div className="links">
           {data.map((x, y) => {
             return (
-              <div key={x} className="fiiter--inner">
+              <div key={y + 'inner'} className="fiiter--inner">
                 <span className="footer--title">{x.title}</span>
                 <div>
                   {x.links.map(x => (
-                    <Link key={x} to={`/info/${x}`} className="footer--link">
+                    <Link key={x + 'Link'} to={`/info/${x}`} className="footer--link">
                       {x}
                     </Link>
                   ))}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from '../components/Menu';
 import { HamburgerButton } from 'react-hamburger-button';
+import { Link } from 'react-router-dom';
 
 export default class Nav extends React.Component {
   constructor() {
@@ -10,23 +11,22 @@ export default class Nav extends React.Component {
     };
   }
 
-  handleClick() {
+  handleClick = () => {
     this.setState({ open: !this.state.open });
-  }
+  };
 
   render() {
     return (
       <div>
         <div className={this.state.open ? 'hideNav wrapper' : 'nav wrapper'}>
           <div className="nav--logo--parent wrapper">
-            <span
-              className="logo--name"
-              style={{
-                color: '#2E4F4C',
-                fontWeight: 'bold'
-              }}>
-              NAME
-            </span>
+            <Link to="/">
+              <span
+                className="logo--name"
+                style={{ color: '#2E4F4C', fontWeight: 'bold' }}>
+                NAME
+              </span>
+            </Link>
           </div>
           <div className="hamburger--parent">
             <HamburgerButton
@@ -41,7 +41,7 @@ export default class Nav extends React.Component {
             />
           </div>
         </div>
-        <Menu open={this.state.open} />
+        <Menu open={this.state.open} handleClick={this.handleClick} />
       </div>
     );
   }

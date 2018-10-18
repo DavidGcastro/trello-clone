@@ -55,7 +55,6 @@ app.use(express.static('./public'));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
-  res.sendFile(path.join(__dirname, '../public/index.html'));
 
 }); // Send index.html for any other requests
 
