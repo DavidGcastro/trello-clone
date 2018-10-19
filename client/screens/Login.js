@@ -7,10 +7,12 @@ export default class Login extends Component {
   }
 
   render() {
-    return <div className="form--parent innerPadding">
+    return (
+      <div className="form--parent innerPadding">
         <div className="form--inner">
-          <span className="title--large--light">Welcome Back</span>
+          <span className="text--large--bold">Welcome Back.</span>
         </div>
-      </div>;
+      </div>
+    );
   }
 }
