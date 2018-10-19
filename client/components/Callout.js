@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Callout = () => {
+const Callout = props => {
+  let { mainText, smallText, buttonText } = props;
   return (
     <div className="callout wrapper divider">
       <div
@@ -9,21 +10,13 @@ const Callout = () => {
         style={{ paddingBottom: 0 }}>
         <div className="callout--textParent">
           <div>
-            <span className="title--large--light right-align">
-              Donec rutrum congue leo eget malesuada. Donec rutrum congue leo
-              eget.
-            </span>
-            <span className="header--description">
-              Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit,
-              eget tincidunt nibh pulvinar a. Nulla porttitor accumsan
-              tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh
-              pulvinar a.
-            </span>
+            <span className="title--large--light right-align">{mainText}</span>
+            <span className="header--description">{smallText}</span>
           </div>
           <Link to="/signup">
             <input
               style={{ marginTop: 20, marginBottom: 20 }}
-              value="Try For Free"
+              value={buttonText}
               className="button--action"
               type="button"
             />

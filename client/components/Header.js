@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Header = () => {
+const Header = props => {
+  let { mainText, smallText, linkText, linkPath } = props;
   return (
     <div className="header wrapper">
       <img
@@ -8,21 +9,13 @@ const Header = () => {
         src="/assets/images/conference_table.png"
       />
       <div className="header--text innerPadding" style={{ paddingTop: 30 }}>
-        <span className="title--large--light">
-          Donec rutrum congue leo eget malesuada.
-        </span>
+        <span className="title--large--light">{mainText}</span>
         <div className="header--descriptionParent">
-          <span
-            className="header--description"
-            style={{ fontWeight: 100 }}>
-            Vivamus magna justo, lacinia eget consectetur sed, convallis at
-            tellus. Cras ultricies ligula sed magna dictum porta.
+          <span className="header--description" style={{ fontWeight: 100 }}>
+            {smallText}
           </span>
-          <a
-            href="mailto:davidgcastro93@gmail.com"
-            target="_self"
-            className="underlinedLink divider">
-            Contact Us
+          <a href={linkPath} target="_self" className="underlinedLink divider">
+            {linkText}
           </a>
         </div>
       </div>
