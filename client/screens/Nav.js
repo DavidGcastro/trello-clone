@@ -32,7 +32,7 @@ export default class Nav extends React.Component {
             <HamburgerButton
               className="hamburger"
               open={this.state.open}
-              onClick={this.handleClick.bind(this)}
+              onClick={this.handleClick}
               width="4vh"
               height={20}
               strokeWidth={1}

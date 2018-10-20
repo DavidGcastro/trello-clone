@@ -1,11 +1,77 @@
-.form--parent {
-  flex: 1;
-  // background: $earth;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+.form {
+  &--parent {
+    flex: 1;
+    display: flex;
+    padding: 30px;
+
+    img {
+      width: 100%;
+      @include md {
+        flex: 1;
+        max-width: 300px;
+        align-items: center;
+      }
+    }
+
+    @include md {
+      padding: 50px;
+      background: $earth;
+    }
+  }
+
+  &--section {
+    margin: 10px 0;
+    display: block;
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+      flex-direction: column;
+      display: flex;
+    }
+  }
 }
 
-.form--inner {
+input {
+  border-radius: 0;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+  border: none;
+  border-bottom: 1px solid $niceBlack;
+}
+
+.form--container {
+  display: flex;
+  flex-direction: column;
+
+  @include md {
+    flex: 1;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.form--box {
+  background: white;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+
+  @include md {
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+label {
+  margin: 0;
+}
+.form--left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }

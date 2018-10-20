@@ -49,14 +49,12 @@ input {
   box-shadow: none;
 }
 
-
 .centered-image {
   min-width: 350px;
   width: 100%;
   height: auto;
   max-width: 600px;
 }
-
 
 .padder {
   padding: 30px;
@@ -98,4 +96,13 @@ input {
   width: 100%;
 }
 
+.underline {
+  display: inline;
+  padding-bottom: 5px;
+  border-bottom: 3px solid $niceBlack;
+}
 
+
+*:focus {
+  outline: none;
+}
