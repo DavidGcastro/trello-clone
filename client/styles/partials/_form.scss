@@ -5,17 +5,16 @@
     padding: 30px;
 
     img {
-      width: 100%;
+      max-width: 200px;
+      max-height: 300px;
       @include md {
         flex: 1;
-        max-width: 300px;
         align-items: center;
       }
     }
 
     @include md {
       padding: 50px;
-      background: $earth;
     }
   }
 
@@ -46,18 +45,21 @@ input {
 
   @include md {
     flex: 1;
-    max-width: 300px;
+    max-width: 350px;
     display: flex;
+    // justify-content: flex-end;
     justify-content: space-between;
   }
 }
 
 .form--box {
-  background: white;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
   max-width: 800px;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
 
   @include md {
     border-radius: 10px;
@@ -74,4 +76,12 @@ label {
   flex: 1;
   display: flex;
   flex-direction: column;
+  letter-spacing: 5px;
+  align-items: center;
+  @include md {
+    align-items: flex-start;
+  }
+  span {
+    padding-bottom: 20px;
+  }
 }
