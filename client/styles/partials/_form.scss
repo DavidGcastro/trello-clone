@@ -1,87 +1,67 @@
 .form {
   &--parent {
     flex: 1;
+    text-align: center;
     display: flex;
-    padding: 30px;
-
-    img {
-      max-width: 200px;
-      max-height: 300px;
-      @include md {
-        flex: 1;
-        align-items: center;
-      }
-    }
-
+    background: #FEF5F5;
+    justify-content: center;
     @include md {
       padding: 50px;
     }
   }
 
-  &--section {
-    margin: 10px 0;
-    display: block;
+  &--firstChild {
+    text-align: center;
+    flex: 1;
+    background: white;
+    max-width: 1000px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-
+    padding: 40px;
     @include md {
-      flex-direction: column;
-      display: flex;
+      position: relative;
+      padding: 40px;
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+    img {
+      display: none;
+      @include md {
+        display: block;
+        position: absolute;
+        bottom: -20px;
+        right: -12px;
+      }
     }
   }
 }
 
+.input--section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin-top: 25px;
+}
+.input--label {
+  font-size: 15px !important;
+  letter-spacing: 2px;
+  margin: 0;
+  align-items: flex-start;
+}
+
+.form--wrapper {
+  flex-direction: column;
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+}
 input {
   border-radius: 0;
   -webkit-appearance: none;
   box-shadow: none !important;
   border: none;
-  border-bottom: 1px solid $niceBlack;
-}
-
-.form--container {
-  display: flex;
-  flex-direction: column;
-
-  @include md {
-    flex: 1;
-    max-width: 350px;
-    display: flex;
-    // justify-content: flex-end;
-    justify-content: space-between;
-  }
-}
-
-.form--box {
-  justify-content: space-between;
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-
-  @include md {
-    border-radius: 10px;
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-label {
-  margin: 0;
-}
-.form--left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  letter-spacing: 5px;
-  align-items: center;
-  @include md {
-    align-items: flex-start;
-  }
-  span {
-    padding-bottom: 20px;
-  }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.68);
 }

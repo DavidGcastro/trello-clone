@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const Callout = props => {
   let { mainText, smallText, buttonText } = props;
   return (
-    <div className="callout wrapper divider">
+    <div className="callout divider">
       <div
-        className="callout--content innerPadding"
+        className="callout--content innerPadding wrapper "
         style={{ paddingBottom: 0 }}>
         <div className="callout--textParent">
           <div>

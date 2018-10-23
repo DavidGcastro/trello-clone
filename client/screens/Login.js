@@ -9,42 +9,32 @@ export default class Login extends Component {
   render() {
     return (
       <div className="form--parent">
-        <div className="form--box wrapper innerPadder">
-          <div className="form--left">
-            <span className="text--large--bold" style={{ letterSpacing: 5 }}>
-              <div className="underline">Welcome</div> Back.
-            </span>
-            <img src="/assets/images/conversation.png" />
-          </div>
-          <form className="form--container innerPadder">
-            <div className="form--section">
-              <label className="text--reg" style={{ letterSpacing: 2 }}>
-                Email
-              </label>
-              <input
-                className="text--reg"
-                style={{ color: 'black' }}
-                type="text"
-              />
+        <div className="form--firstChild">
+          <span
+            className="text--large--bold"
+            style={{ letterSpacing: 4, marginBottom: 25 }}>
+            <div className="underline">Welcome</div> Back.
+          </span>
+          <span className="text--reg" style={{ fontSize: 20 }}>
+            Enter the email address associated with your account, and we’ll send
+            a magic link to your inbox.
+          </span>
+          <form className="form--wrapper">
+            <div className="input--section">
+              <label className="text--reg input--label">Your Email</label>
+              <input type="text" />
             </div>
-            <div className="form--section">
-              <label className="text--reg" style={{ letterSpacing: 2 }}>
-                Password
-              </label>
-              <input
-                className="text--reg"
-                style={{ color: 'black' }}
-                type="text"
-              />
+            <div className="input--section">
+              <label className="text--reg input--label">Password</label>
+              <input type="text" />
             </div>
-            <div className="form--section">
-              <input
-                type="submit"
-                className="button--action"
-                style={{ maxWidth: '100%' }}
-              />
-            </div>
+            <input
+              type="submit"
+              className="button--action"
+              style={{ marginTop: 25, padding: 3 }}
+            />
           </form>
+          <img src="/assets/images/conversation.png" width={150} />
         </div>
       </div>
     );
