@@ -5,6 +5,7 @@
     display: flex;
     background: #FEF5F5;
     justify-content: center;
+    align-items: center;
     @include md {
       padding: 50px;
     }

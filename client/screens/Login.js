@@ -1,12 +1,34 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Login extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      email: '',
+      password: '',
+      errorMessage: ''
+    };
   }
 
+  handleClick = e => {
+    e.preventDefault();
+    axios
+      .post('/auth/login', {
+        email: this.state.email,
+        password: this.state.password
+      })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({ errorMessage: 'User not found.' });
+      });
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div className="form--parent">
         <div className="form--firstChild">
@@ -22,13 +44,23 @@ export default class Login extends Component {
           <form className="form--wrapper">
             <div className="input--section">
               <label className="text--reg input--label">Your Email</label>
-              <input type="text" />
+              <input
+                onChange={event => this.setState({ email: event.target.value })}
+                type="text"
+              />
             </div>
             <div className="input--section">
               <label className="text--reg input--label">Password</label>
-              <input type="text" />
+              <input
+                onChange={event =>
+                  this.setState({ password: event.target.value })
+                }
+                type="password"
+              />
             </div>
+            <span className="text--danger">{this.state.errorMessage}</span>
             <input
+              onClick={this.handleClick}
               type="submit"
               className="button--action"
               style={{ marginTop: 25, padding: 3 }}
