@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router';
 import axios from 'axios';
 
 export default class Login extends Component {
@@ -7,7 +8,8 @@ export default class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      errorMessage: ''
+      errorMessage: '',
+      loggedIn: false
     };
   }
 
@@ -23,12 +25,11 @@ export default class Login extends Component {
       })
       .catch(error => {
         console.log(error);
-        this.setState({ errorMessage: 'User not found.' });
+        this.setState({ errorMessage: 'User not found!' });
       });
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="form--parent">
         <div className="form--firstChild">

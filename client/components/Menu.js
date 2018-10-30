@@ -11,8 +11,8 @@ const Menu = props => {
         <Link className="link" to="/about">
           About Us
         </Link>
-        <Link className="link" to="/">
-          FAQ
+        <Link className="link" to="/account">
+          Account
         </Link>
         <Link className="link" to="/login">
           Log In
