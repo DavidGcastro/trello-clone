@@ -5,7 +5,9 @@ const app = express();
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 const path = require('path');
-var session = require('express-session');
+const session = require('express-session');
+const passport = require('passport')
+
 const seed = require('./db/seed');
 //logging middleware
 app.use(volleyball);
@@ -23,7 +25,6 @@ app.use(
     secret: 'threediamonddoor', // or whatever you like
     // this option is recommended and reduces session concurrency issues
     resave: false,
-
     //Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized
     //when it is new but not modified.Choosing false is useful for
     // implementing login sessions, reducing server storage usage,
