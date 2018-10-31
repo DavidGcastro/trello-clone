@@ -42,7 +42,6 @@ app.use(
 
 app.use(function(req, res, next) {
   console.log('******SESSION HERE***** ', req.session);
-
   if (req.session.userId) {
     console.log('USER WAS HERE BEFORE');
   } else {

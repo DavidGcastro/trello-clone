@@ -6,7 +6,9 @@ const decrypt = require('../utils/hashing');
 router.post('/', (req, res, next) => {
   let { email, password } = req.body;
   User.findOne({
-    where: {}
+    where: {
+      email
+    }
   })
     .then(user => {
       if (!user) {
@@ -14,8 +16,13 @@ router.post('/', (req, res, next) => {
       } else if (
         decrypt.isCorrectPassword(password, user.salt(), user.password())
       ) {
+        console.log('PASSWORD FOUND');
         req.session.userId = user.id;
+        req.session.userName = user.firstName;
         res.sendStatus(200);
+      } else {
+        console.log('Password not found');
+        res.sendStatus(404);
       }
     })
     .catch(next);
