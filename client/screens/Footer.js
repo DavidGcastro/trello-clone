@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="links">
           {data.map((x, y) => {
             return (
-              <div key={y + 'inner'} className="fiiter--inner">
+              <div key={y + 'inner'} className="filter--inner">
                 <span className="footer--title">{x.title}</span>
                 <div>
                   {x.links.map(x => (

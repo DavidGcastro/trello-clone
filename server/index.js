@@ -6,7 +6,7 @@ const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 const path = require('path');
 const session = require('express-session');
-const passport = require('passport')
+const passport = require('passport');
 
 const seed = require('./db/seed');
 //logging middleware
@@ -49,20 +49,6 @@ app.use(function(req, res, next) {
 
 app.use('/api', require('./api')); // include our routes!
 app.use('/auth', require('./auth'));
-
-// // static file-serving middleware
-// app.use(express.static(path.join(__dirname, '..', 'public')));
-
-// // any remaining requests with an extension (.js, .css, etc.) send 404
-// app.use((req, res, next) => {
-//   if (path.extname(req.path).length) {
-//     const err = new Error('Not found');
-//     err.status = 404;
-//     next(err);
-//   } else {
-//     next();
-//   }
-// });
 app.use(express.static('./public'));
 
 app.get('*', (req, res) => {

@@ -2,8 +2,8 @@
   width: 100%;
   background: #f4f5f7;
   padding: 10px;
-  height: 250px;
-
+  max-height: 300px;
+  flex: 1;
   @include md {
     flex-direction: row;
     // height: 200px;

@@ -39,23 +39,9 @@
 
 .header--image {
   width: 100%;
-  max-height: 1000px;
+  // max-height: 1000px;
+  max-height: 450px;
 }
-
-// .header--title {
-//   @extend .text--large;
-//   font-weight: 500;
-//   letter-spacing: 2px;
-//   padding-bottom: 5px;
-//   color:red;
-
-//   @include md {
-//     line-height: 35px;
-
-//     padding-bottom: 0px;
-//     text-align: left;
-//   }
-// }
 
 .header--description {
   font-size: 0.875rem;
