@@ -1,22 +1,21 @@
 const router = require('express').Router();
 const { User } = require('../db/models/index');
 const passport = require('passport');
+const decrypt = require('../utils/hashing');
 
 router.post('/', (req, res, next) => {
   let { email, password } = req.body;
   User.findOne({
-    where: {
-      email,
-      password
-    }
+    where: {}
   })
-    .then(function(user) {
+    .then(user => {
       if (!user) {
         res.sendStatus(401);
-      } else {
+      } else if (
+        decrypt.isCorrectPassword(password, user.salt(), user.password())
+      ) {
         req.session.userId = user.id;
-        res.redirect('/account');
-        // res.status(200).send(user);
+        res.sendStatus(200);
       }
     })
     .catch(next);

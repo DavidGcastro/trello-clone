@@ -6,6 +6,7 @@ const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 const path = require('path');
 const session = require('express-session');
+const SessionStore = require('connect-session-sequelize')(session.Store);
 const passport = require('passport');
 
 const seed = require('./db/seed');
@@ -18,7 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //related middleware.Just like logging and body - parsing middleware, the session middleware should come
 //before any kind of routing,
 //otherwise our request / response would not have been "processed" early enough.
-
 app.use(
   session({
     // this mandatory configuration ensures that session IDs are not predictable
@@ -33,12 +33,16 @@ app.use(
     //parallel requests without a session.
     //The default value is true, but using the default has been deprecated, as the default will change in the future.
     //Please research into this setting and choose what is appropriate to your use -case.
+    store: new SessionStore({
+      db
+    }),
     saveUninitialized: true
   })
 );
 
 app.use(function(req, res, next) {
   console.log('******SESSION HERE***** ', req.session);
+
   if (req.session.userId) {
     console.log('USER WAS HERE BEFORE');
   } else {
