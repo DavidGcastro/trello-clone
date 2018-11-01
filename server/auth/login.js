@@ -32,7 +32,7 @@ passport.use(
       .catch(err => done(err));
   })
 );
-router.post('/', function(req, res, next) {
+router.post('/', function(req, res, next) {  //post => func => pass auth => local =>
   console.log('Inside POST /login callback');
   // This method takes 2 parameters. Our ‘login strategy’ which is ‘local’ in this case, since we will be authenticating with email and password
   //(you can find a list of other login strategies using passport though. These include Facebook, Twitter, etc.) and a callback function
@@ -53,12 +53,14 @@ router.post('/', function(req, res, next) {
 
     // The req.login(user, callback()) method takes in the user object we just returned from our local strategy and calls passport.serializeUser(callback()).
     // It takes that user object and
-    // 1) saves the user id to the session file store
-    // 2) saves the user id in the request object as request.session.passport and
-    // 3) adds the user object to the request object as request.user.Now, on subsequent requests to authorized routes,
+    // 1) saves the user (remember we have made everything but id and first name private) to the session file store
+    // 2) saves the user in the request object as request.session.passport and
+    // 3) adds the user object to the request object as request.user.
+    //Now, on subsequent requests to authorized routes,
     //  we can retrieve the user object without requiring the user to login again(by getting the id from
     //   the session file store and using that to get the user object from the database and adding it to our request object).
 
+    // The req.login() function handles serializing the user id to the session store and inside our request object and also adds the user object to our request object.
     req.logIn(user, function(err) {
       if (err) {
         return next(err);

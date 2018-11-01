@@ -42,6 +42,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+// Note, that we call this after we configure our app to use express - session and the session - file - store.This is because passport rides on top of these.
 
 passport.serializeUser(function(user, done) {
   done(null, user);
