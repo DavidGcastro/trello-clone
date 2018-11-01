@@ -21,6 +21,7 @@ export default class Login extends Component {
         password: this.state.password
       })
       .then(function(response) {
+        if (response.data.redirectUrl) window.location.href = response.data.redirectUrl;
         console.log(response);
       })
       .catch(error => {

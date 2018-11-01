@@ -12,56 +12,45 @@ passport.use(
     // to find the user based on their username or email address
     User.findOne({
       where: {
-        email,
-        password
+        email
       }
     })
       .then(user => {
         if (!user) {
+          console.log('NOT FOUND');
           return done(null, false);
         } else if (decrypt(password, user.salt(), user.password())) {
           console.log('Local strategy returned true');
           return done(null, user);
-        } else {
-          console.log('Password not found');
-          res.sendStatus(404);
         }
       })
       .catch(err => done(err));
   })
 );
-
-router.post('/', (req, res, next) => {
-  let { email, password } = req.body;
-  User.findOne({
-    where: {
-      email
+router.post('/', function(req, res, next) {
+  console.log('Inside POST /login callback');
+  passport.authenticate('local', function(err, user, info) {
+    console.log('Inside passport.authenticate() callback');
+    if (err) {
+      return next(err);
     }
-  })
-    .then(user => {
-      if (!user) {
-        res.sendStatus(401);
-      } else if (decrypt(password, user.salt(), user.password())) {
-        console.log('PASSWORD FOUND');
-        req.session.userId = user.id;
-        req.session.userName = user.firstName;
-        res.sendStatus(200);
-      } else {
-        console.log('Password not found');
-        res.sendStatus(404);
+    if (!user) {
+      return res.redirect('/login');
+    }
+    req.logIn(user, function(err) {
+      if (err) {
+        return next(err);
       }
-    })
-    .catch(next);
+      return res.status(200).json({ success: true, redirectUrl: '/account' });
+    });
+  })(req, res, next);
 });
 
 passport.serializeUser(function(user, done) {
-  done(null, user.id);
+  done(null, user);
 });
 
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
-  });
+passport.deserializeUser(function(user, done) {
+  done(null, user);
 });
-
 module.exports = router;

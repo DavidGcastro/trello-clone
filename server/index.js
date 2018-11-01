@@ -39,6 +39,8 @@ app.use(
     saveUninitialized: true
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(function(req, res, next) {
   console.log('******SESSION HERE***** ', req.session);
@@ -49,6 +51,7 @@ app.use(function(req, res, next) {
   }
   next();
 });
+
 
 app.use('/api', require('./api')); // include our routes!
 app.use('/auth', require('./auth'));
