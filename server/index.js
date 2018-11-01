@@ -8,8 +8,9 @@ const path = require('path');
 const session = require('express-session');
 const SessionStore = require('connect-session-sequelize')(session.Store);
 const passport = require('passport');
-
 const seed = require('./db/seed');
+const uuidv4 = require('uuid/v4');
+
 //logging middleware
 app.use(volleyball);
 app.use(bodyParser.json());
@@ -22,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   session({
     // this mandatory configuration ensures that session IDs are not predictable
-    secret: 'threediamonddoor', // or whatever you like
+    secret: uuidv4(), // or whatever you like
     // this option is recommended and reduces session concurrency issues
     resave: false,
     //Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized
@@ -42,16 +43,22 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 app.use(function(req, res, next) {
   console.log('******SESSION HERE***** ', req.session);
-  if (req.session.userId) {
+  if (req.session.passport) {
     console.log('USER WAS HERE BEFORE');
   } else {
     console.log('NEW USER');
   }
   next();
 });
-
 
 app.use('/api', require('./api')); // include our routes!
 app.use('/auth', require('./auth'));

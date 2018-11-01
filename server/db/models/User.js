@@ -9,12 +9,18 @@ const User = db.define('user', {
   },
   lastName: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    get() {
+      return () => this.getDataValue('lastName');
+    }
   },
   email: {
     type: Sequelize.STRING,
     allowNull: false,
     unique: true,
+    get() {
+      return () => this.getDataValue('email');
+    },
     validate: {
       isEmail: true
     }
@@ -23,6 +29,7 @@ const User = db.define('user', {
     type: Sequelize.STRING,
     // Making `.salt` act like a function hides it when serializing to JSON.
     // This is a hack to get around Sequelize's lack of a "private" option.
+    //doesnt send if we ever want to use
     get() {
       return () => this.getDataValue('salt');
     }
@@ -43,10 +50,8 @@ User.encryptPassword = (plainText, salt) =>
   hashing.encryptPassword(plainText, salt);
 
 const setSaltAndPassword = user => {
-  // if (user.changed('password')) {
-    user.salt = User.generateSalt();
-    user.password = User.encryptPassword(user.password(), user.salt());
-  // }
+  user.salt = User.generateSalt();
+  user.password = User.encryptPassword(user.password(), user.salt());
 };
 
 User.beforeCreate(setSaltAndPassword);
