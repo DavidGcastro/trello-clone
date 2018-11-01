@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Home from './Home';
 import Login from './Login';
 import PageNotFound from './404';
+import Profile from '../auth/Profile';
 
 const Main = () => {
   return (
@@ -16,6 +17,7 @@ const Main = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route path="/profile" component={Profile} />
             <Route component={PageNotFound} />
           </Switch>
         </div>

@@ -32,7 +32,8 @@ passport.use(
       .catch(err => done(err));
   })
 );
-router.post('/', function(req, res, next) {  //post => func => pass auth => local =>
+router.post('/', function(req, res, next) {
+  //post => func => pass auth => local =>
   console.log('Inside POST /login callback');
   // This method takes 2 parameters. Our ‘login strategy’ which is ‘local’ in this case, since we will be authenticating with email and password
   //(you can find a list of other login strategies using passport though. These include Facebook, Twitter, etc.) and a callback function
@@ -65,7 +66,7 @@ router.post('/', function(req, res, next) {  //post => func => pass auth => loca
       if (err) {
         return next(err);
       }
-      return res.status(200).json({ success: true, redirectUrl: '/account' });
+      return res.status(200).json({ success: true, redirectUrl: '/profile' });
     });
   })(req, res, next);
 });
