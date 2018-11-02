@@ -26,7 +26,7 @@ passport.use(
           return done(null, false);
         } else if (decrypt(password, user.salt(), user.password())) {
           console.log('Local strategy returned true');
-          return done(null, user, user.email());
+          return done(null, user);
         }
       })
       .catch(err => done(err));
@@ -36,7 +36,8 @@ router.post('/', function(req, res, next) {
   //post => func => pass auth => local =>
   console.log('Inside POST /login callback');
   // This method takes 2 parameters. Our ‘login strategy’ which is ‘local’ in this case, since we will be authenticating with email and password
-  //(you can find a list of other login strategies using passport though. These include Facebook, Twitter, etc.) and a callback function
+  //(you can find a list of other login strategies using passport though. These include Facebook, Twitter, etc.)
+  //and a callback function
   //giving us access to the user object if authentication is successful and an error object if not.
 
   // passport.authenticate() will call our ‘local’ auth strategy, so we need to configure passport to use
@@ -59,7 +60,7 @@ router.post('/', function(req, res, next) {
     // 3) adds the user object to the request object as request.user.
     //Now, on subsequent requests to authorized routes,
     //  we can retrieve the user object without requiring the user to login again(by getting the id from
-    //   the session file store and using that to get the user object from the database and adding it to our request object).
+    //   the session store and using that to get the user object from the database and adding it to our request object).
 
     // The req.login() function handles serializing the user id to the session store and inside our request object and also adds the user object to our request object.
     req.logIn(user, function(err) {
