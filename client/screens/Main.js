@@ -4,6 +4,7 @@ import Nav from './Nav';
 import Footer from './Footer';
 import Home from './Home';
 import Login from './Login';
+import Signup from './Signup';
 import PageNotFound from './404';
 import Profile from '../auth/Profile';
 
@@ -16,7 +17,8 @@ const Main = () => {
           <div className="spacer" />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
             <Route path="/profile" component={Profile} />
             <Route component={PageNotFound} />
           </Switch>
