@@ -18,6 +18,9 @@
   }
 
   a {
+    @include md {
+      display: none;
+    }
     transition: all 200ms ease;
     color: white;
     font-size: 5vh;
@@ -51,7 +54,7 @@
   max-height: 50%;
   width: 100%;
   align-items: center;
-  @include md {
-    display: none;
-  }
+  // @include md {
+  //   display: none;
+  // }
 }

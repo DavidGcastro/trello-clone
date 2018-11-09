@@ -17,9 +17,16 @@
   background: none;
   border: none;
 
+  @include md {
+    background: white;
+  }
+
   .nav--logo,
   .logo--name {
     visibility: hidden;
+    @include md {
+      visibility: visible;
+    }
   }
 }
 
@@ -50,10 +57,16 @@
   display: none;
 
   @include md {
-    flex: 0.75;
+    flex: 1;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    font-size: 12px;
+    
+  }
+
+  @include lg {
+    font-size: 14px;
   }
 }
 
