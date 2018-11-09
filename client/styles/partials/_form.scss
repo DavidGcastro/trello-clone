@@ -45,12 +45,14 @@
   flex-direction: column;
   max-width: 320px;
   margin-top: 25px;
+  text-align: left !important;
 }
 .input--label {
   font-size: 15px !important;
   letter-spacing: 2px;
   margin: 0;
   align-items: flex-start;
+  text-align: left !important;
 }
 
 .form--wrapper {
