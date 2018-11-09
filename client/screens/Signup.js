@@ -23,7 +23,7 @@ export default class Signup extends Component {
       <MyForm
         salutation="Hey"
         salutation2="There!"
-        message="Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.">
+        message="Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.">
         <form className="form--wrapper">
           <div className="input--inline">
             <div className="input--section">

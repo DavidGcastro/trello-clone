@@ -28,6 +28,23 @@ export default class Nav extends React.Component {
               </span>
             </Link>
           </div>
+          <div className="nav--visible">
+            <Link className="link" to="/about">
+              About Us
+            </Link>
+            <Link className="link" to="/account">
+              Account
+            </Link>
+            <Link className="link" to="/login">
+              Log In
+            </Link>
+            <Link className="link" to="/signup">
+              Sign Up
+            </Link>
+            <Link className="link" to="/signup">
+              Other Link
+            </Link>
+          </div>
           <div className="hamburger--parent">
             <HamburgerButton
               className="hamburger"

@@ -10,7 +10,7 @@
   background: white;
   padding: 10px;
   z-index: 2;
-  opacity: .8;
+  opacity: 0.8;
 }
 .hideNav {
   @extend .nav;
@@ -46,8 +46,23 @@
   align-items: baseline;
 }
 
+.nav--visible {
+  display: none;
+
+  @include md {
+    flex: 0.75;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
 .hamburger--parent {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+
+  @include md {
+    display: none;
+  }
 }
