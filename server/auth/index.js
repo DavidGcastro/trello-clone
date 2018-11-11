@@ -8,6 +8,11 @@ router.get('/me', (req, res) => {
   }
 });
 
+router.get('/logout', (req, res) => {
+  req.logout();
+  req.session.destroy();
+  res.sendStatus(200);
+});
 //Map to api files
 // starting from /auth
 router.use('/login', require('./login'));

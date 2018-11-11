@@ -8,18 +8,20 @@ import Login from './Login';
 import Signup from './Signup';
 import PageNotFound from './404';
 import Profile from '../auth/Profile';
-import { setUserAsync } from '../redux/reducers/user';
+import { setUserAsync, logOutUserAsync } from '../redux/reducers/user';
 
 class Main extends Component {
   componentDidMount() {
     this.props.setUser();
   }
   render() {
-    let { user } = this.props;
+    console.log(this.props);
+    let userLoggedIn = this.props.user ? true : false;
+    console.log(userLoggedIn);
     return (
       <Router>
         <div id="container">
-          <Nav />
+          <Nav userLoggedIn={userLoggedIn} />
           <div className="main--content">
             <div className="spacer" />
             <Switch>
@@ -45,7 +47,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setUser: () => dispatch(setUserAsync())
+    setUser: () => dispatch(setUserAsync()),
+    logout: () => dispatch(logOutUserAsync())
   };
 };
 

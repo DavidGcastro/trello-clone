@@ -2,8 +2,10 @@ import React from 'react';
 import Menu from '../components/Menu';
 import { HamburgerButton } from 'react-hamburger-button';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logOutUserAsync } from '../redux/reducers/user';
 
-export default class Nav extends React.Component {
+class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -16,6 +18,9 @@ export default class Nav extends React.Component {
   };
 
   render() {
+    let { userLoggedIn, logout } = this.props;
+    console.log(this.props);
+
     return (
       <div>
         <div className={this.state.open ? 'hideNav wrapper' : 'nav wrapper'}>
@@ -28,23 +33,41 @@ export default class Nav extends React.Component {
               </span>
             </Link>
           </div>
-          <div className="nav--visible">
-            <Link className="link" to="/about">
-              About Us
-            </Link>
-            <Link className="link" to="/profile">
-              Profile
-            </Link>
-            <Link className="link" to="/login">
-              Log In
-            </Link>
-            <Link className="link" to="/signup">
-              Sign Up
-            </Link>
-            <Link className="link" to="/signup">
-              Other Link
-            </Link>
-          </div>
+          {userLoggedIn ? (
+            <div className="nav--visible">
+              <Link className="link" to="/about">
+                About Us
+              </Link>
+              <Link className="link" to="/signup">
+                Features
+              </Link>
+              <Link className="link" to="/signup">
+                Trello 101
+              </Link>
+              <a href="#" onClick={logout}>
+                Log Out CL
+              </a>
+            </div>
+          ) : (
+            <div className="nav--visible">
+              <Link className="link" to="/about">
+                About Us
+              </Link>
+              <Link className="link" to="/profile">
+                Profile
+              </Link>
+              <Link className="link" to="/login">
+                Log In
+              </Link>
+              <Link className="link" to="/signup">
+                Sign Up
+              </Link>
+              <Link className="link" to="/signup">
+                Other Link
+              </Link>
+            </div>
+          )}
+
           <div className="hamburger--parent">
             <HamburgerButton
               className="hamburger"
@@ -58,8 +81,23 @@ export default class Nav extends React.Component {
             />
           </div>
         </div>
-        <Menu open={this.state.open} handleClick={this.handleClick} />
+        <Menu
+          open={this.state.open}
+          handleClick={this.handleClick}
+          userLoggedIn={userLoggedIn}
+        />
       </div>
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => dispatch(logOutUserAsync())
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Nav);
