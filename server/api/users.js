@@ -11,11 +11,7 @@ router.get('/:id', (req, res, next) => {
   let { id } = req.params;
   User.findAll({
     where: { id },
-    include: [
-      {
-        model: Project
-      }
-    ]
+    include: [{all: true}]
   })
     .then(user => res.send(user))
     .catch(err => console.error(err));

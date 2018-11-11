@@ -18,6 +18,6 @@ export default class Profile extends Component {
 
   render() {
     console.log(this.state.me);
-    return <h1>This is the profile page {this.state.me.firstName}</h1>;
+    return <h1>This is the profile page of {this.state.me.firstName}</h1>;
   }
 }

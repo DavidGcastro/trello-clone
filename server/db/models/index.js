@@ -12,9 +12,6 @@ const Team = db.define('team');
 // This works if we all use the same Sequelize instance (instantiated in and exported from `/db/index.js`)
 // Exporting all models from here seems like a good idea!
 
-// Project.belongsToMany(User, { through: 'UserProject' });
-// User.belongsToMany(Project, { through: 'UserProject' });
-
 User.belongsToMany(Project, { through: Team });
 Project.belongsToMany(User, { through: Team });
 
