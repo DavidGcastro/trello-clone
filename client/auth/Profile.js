@@ -7,9 +7,18 @@ class Profile extends Component {
     this.props.setUser();
   }
   render() {
+    let { user } = this.props;
+    console.log(user);
     return <span className="text--large">Hello World</span>;
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    user: state.userReducer.user
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     setUser: () => dispatch(setUserAsync())
@@ -17,6 +26,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Profile);

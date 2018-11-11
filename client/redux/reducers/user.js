@@ -31,7 +31,7 @@ export default function(initialState = {}, action) {
     case SET_USER:
       return { ...initialState, user: action.user };
     case LOG_OUT:
-      return { ...initialState, user: {} };
+      return { ...initialState, user: false };
     default:
       return initialState;
   }

@@ -38,14 +38,11 @@ class Nav extends React.Component {
               <Link className="link" to="/about">
                 About Us
               </Link>
-              <Link className="link" to="/signup">
-                Features
+              <Link className="link" to="/profile">
+                Profile
               </Link>
-              <Link className="link" to="/signup">
-                Trello 101
-              </Link>
-              <a href="#" onClick={logout}>
-                Log Out CL
+              <a href="#" className="link" onClick={logout}>
+                Log Out
               </a>
             </div>
           ) : (
@@ -53,17 +50,11 @@ class Nav extends React.Component {
               <Link className="link" to="/about">
                 About Us
               </Link>
-              <Link className="link" to="/profile">
-                Profile
-              </Link>
               <Link className="link" to="/login">
                 Log In
               </Link>
               <Link className="link" to="/signup">
                 Sign Up
-              </Link>
-              <Link className="link" to="/signup">
-                Other Link
               </Link>
             </div>
           )}
