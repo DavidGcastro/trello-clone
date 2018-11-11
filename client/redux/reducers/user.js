@@ -22,6 +22,7 @@ export const logOutUserAsync = () => dispatch =>
   axios
     .get('/auth/logout')
     .then(() => dispatch(logoutUser()))
+    .then(() => (window.location.href = '/'))
     .catch(err => console.log(err));
 
 /* REDUCER

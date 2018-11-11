@@ -26,7 +26,13 @@ class Main extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
-              <Route path="/profile" component={Profile} />
+              {userLoggedIn && (
+                <Switch>
+                  {/* Routes placed here are only available after logging in */}
+                  <Route path="/profile" component={Profile} />
+                  <Route component={PageNotFound} />
+                </Switch>
+              )}
               <Route component={PageNotFound} />
             </Switch>
           </div>
