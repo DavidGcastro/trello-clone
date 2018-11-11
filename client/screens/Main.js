@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from './Nav';
 import Footer from './Footer';
@@ -7,10 +8,14 @@ import Login from './Login';
 import Signup from './Signup';
 import PageNotFound from './404';
 import Profile from '../auth/Profile';
+import { setUserAsync } from '../redux/reducers/user';
 
-export default class Main extends Component {
-
+class Main extends Component {
+  componentDidMount() {
+    this.props.setUser();
+  }
   render() {
+    let { user } = this.props;
     return (
       <Router>
         <div id="container">
@@ -31,3 +36,20 @@ export default class Main extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    user: state.userReducer.user
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: () => dispatch(setUserAsync())
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Main);

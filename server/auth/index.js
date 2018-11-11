@@ -4,7 +4,7 @@ router.get('/me', (req, res) => {
   if (req.user) {
     res.send(req.user);
   } else {
-    res.send('NO USER');
+    res.send(false);
   }
 });
 

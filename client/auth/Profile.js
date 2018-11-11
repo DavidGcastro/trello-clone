@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { setUserAsync } from '../redux/reducers/user';
 
-export default class Profile extends Component {
-  constructor() {
-    super();
-    this.state = {
-      me: ''
-    };
-  }
-
+class Profile extends Component {
   componentDidMount() {
-    axios
-      .get('/auth/me')
-      .then(me => this.setState({ me: me.data }))
-      .catch(err => console.log(err));
+    this.props.setUser();
   }
-
   render() {
-    console.log(this.state.me);
-    return <h1>This is the profile page of {this.state.me.firstName}</h1>;
+    return <span className="text--large">Hello World</span>;
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: () => dispatch(setUserAsync())
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Profile);
