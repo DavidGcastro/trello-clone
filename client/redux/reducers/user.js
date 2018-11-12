@@ -24,10 +24,15 @@ export const setUserAsync = () => dispatch =>
       let id = res.user.id;
       axios
         .get(`api/users/${id}`)
+        .then(y => {
+          let subtask = y.data[0].subtasks;
+          dispatch(getUserSubtasks(subtask));
+          return y;
+        })
         .then(x => dispatch(getUserProjects(x.data[0].projects)));
+
       return res;
     })
-    .then(x => console.log(x.user))
     .catch(err => console.log(err));
 
 export const logOutUserAsync = () => dispatch =>
@@ -47,6 +52,9 @@ export default function(initialState = {}, action) {
       return { ...initialState, user: false };
     case GET_PROJECTS:
       return { ...initialState, projects: action.projects };
+    case GET_SUBTASKS: {
+      return { ...initialState, subtasks: action.subtasks };
+    }
     default:
       return initialState;
   }
