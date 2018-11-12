@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 
 const Profile = props => {
   let { user, projects, subtasks } = props;
+  let numOfTasks = subtasks && subtasks.length
   return (
     <div className="innerPadding wrapper parentFlexer">
       <div>
-        <span className="text--large--bold">Hi, {user.firstName}</span>
+        <span className="text--large--bold">Hi, {user.firstName}!</span>
         <span className="text--reg">
-          Donec sollicitudin molestie malesuada.
+          You have {numOfTasks} tickets assigned to you.
         </span>
       </div>
       <div>

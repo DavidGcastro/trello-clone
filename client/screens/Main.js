@@ -7,6 +7,7 @@ import Home from './Home';
 import Login from './Login';
 import Signup from './Signup';
 import PageNotFound from './404';
+import About from './About';
 import Profile from '../auth/Profile';
 import { setUserAsync, logOutUserAsync } from '../redux/reducers/user';
 
@@ -26,6 +27,7 @@ class Main extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
+              <Route path="/About" component={About} />
               {userLoggedIn && (
                 <Switch>
                   {/* Routes placed here are only available after logging in */}
