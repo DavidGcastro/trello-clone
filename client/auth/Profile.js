@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setUserAsync } from '../redux/reducers/user';
 
 class Profile extends Component {
-  componentDidMount() {
-    this.props.setUser();
-  }
   render() {
     let user = this.props.user ? this.props.user : {};
     return (
@@ -30,13 +26,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setUser: () => dispatch(setUserAsync())
-  };
-};
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(Profile);
