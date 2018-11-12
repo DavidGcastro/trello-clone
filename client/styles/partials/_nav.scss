@@ -55,14 +55,12 @@
 
 .nav--visible {
   display: none;
-
   @include md {
-    flex: 1;
+    flex: 0.5;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     font-size: 12.5px;
-    
   }
 
   @include lg {
