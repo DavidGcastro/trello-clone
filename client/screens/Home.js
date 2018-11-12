@@ -4,7 +4,8 @@ import Callout from '../components/Callout';
 
 const Home = () => {
   return (
-    <div className="home">
+    //this was .home
+    <div className="parentFlexer">
       <Header
         mainText="Donec rutrum congue leo eget malesuada."
         smallText="Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta."

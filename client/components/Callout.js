@@ -6,7 +6,7 @@ const Callout = props => {
   return (
     <div className="callout divider">
       <div
-        className="callout--content innerPadding wrapper "
+        className="callout--content innerPadding wrapper"
         style={{ paddingBottom: 0 }}>
         <div className="callout--textParent">
           <div>

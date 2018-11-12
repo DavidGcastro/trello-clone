@@ -102,7 +102,29 @@ input {
   border-bottom: 3px solid $niceBlack;
 }
 
-
 *:focus {
   outline: none;
+}
+//use this are the parent div for everypage
+.parentFlexer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.parentFlexerSpaceAround {
+  @extend .parentFlexer;
+  justify-content: space-around;
+}
+
+.parentFlexerCenter {
+  @extend .parentFlexer;
+  justify-content: center;
+}
+
+.parentFlexerEvenly {
+  @extend .parentFlexer;
+  justify-content: space-evenly;
 }
