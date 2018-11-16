@@ -3,14 +3,19 @@ import { connect } from 'react-redux';
 
 const Profile = props => {
   let { user, projects, subtasks } = props;
-  let numOfTasks = subtasks && subtasks.length
+  let numOfTasks = subtasks && subtasks.length;
+  let numOfProjects = projects && projects.length;
+  let content =
+    numOfTasks > 0
+      ? `You have ${numOfTasks} tickets assigned to you.`
+      : 'You do not have any tickets assigned to you.';
+
+  let ProjectHeader = numOfProjects > 0 ? 'Your Projects' : '';
   return (
     <div className="innerPadding wrapper parentFlexer">
       <div>
         <span className="text--large--bold">Hi, {user.firstName}!</span>
-        <span className="text--reg">
-          You have {numOfTasks} tickets assigned to you.
-        </span>
+        <span className="text--reg">{content}</span>
       </div>
       <div>
         <div
@@ -20,7 +25,7 @@ const Profile = props => {
             paddingBottom: 15
           }}>
           <span className="title--large--light" style={{ paddingRight: 20 }}>
-            Your Projects
+            {ProjectHeader}
           </span>
           <span className="text--reg link">Add Projects +</span>
         </div>
