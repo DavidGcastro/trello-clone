@@ -31,7 +31,7 @@ export const setUserAsync = () => dispatch =>
 
       return res;
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log(err, 'Error handler in redux setUserAsync'));
 
 /**************************************************************************/
 

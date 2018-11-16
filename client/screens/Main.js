@@ -17,6 +17,7 @@ class Main extends Component {
   }
   render() {
     let userLoggedIn = this.props.user ? true : false;
+    console.log(userLoggedIn);
     return (
       <Router>
         <div id="container">

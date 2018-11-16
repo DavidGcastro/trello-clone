@@ -29,6 +29,7 @@ router.post('/', passport.authenticate('local'), function(req, res) {
 
 //     // The req.login(user, callback()) method takes in the user object we just returned from our local strategy and calls passport.serializeUser(callback()).
 //     // It takes that user object and
+
 //     // 1) saves the user (remember we have made everything but id and first name private) to the session file store
 //     // 2) saves the user in the request object as request.session.passport and
 //     // 3) adds the user object to the request object as request.user.
