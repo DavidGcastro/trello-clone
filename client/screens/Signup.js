@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import MyForm from '../components/MyForm';
+import { connect } from 'react-redux';
+import { createUserAsync } from '../redux/reducers/user';
+import Axios from 'axios';
 
-export default class Signup extends Component {
+class Signup extends Component {
   constructor() {
     super();
     this.state = {
@@ -15,7 +18,10 @@ export default class Signup extends Component {
 
   handleClick = e => {
     e.preventDefault();
-    console.log(this.state);
+    let { firstName, lastName, email, password } = this.state;
+    let data = { firstName, lastName, email, password };
+    let { createUser } = this.props;
+    createUser(data);
   };
 
   render() {
@@ -45,7 +51,7 @@ export default class Signup extends Component {
                     lastName: event.target.value
                   })
                 }
-                type="password"
+                type="text"
               />
             </div>
           </div>
@@ -84,3 +90,14 @@ export default class Signup extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    createUser: data => dispatch(createUserAsync(data))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Signup);
